@@ -29,6 +29,10 @@ const resultSchema = new mongoose.Schema({
     required: true
   },
   passed: Boolean,
+  swissGrade: {
+    type: Number,
+    default: null
+  },
   timeTaken: Number, // in seconds
   completedAt: {
     type: Date,

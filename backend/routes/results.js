@@ -4,6 +4,19 @@ const Quiz = require('../models/Quiz');
 const auth = require('../middleware/auth');
 const router = express.Router();
 
+// Calculate Swiss grade from percentage (1.0 - 6.0 scale)
+// Swiss grading: 6 = excellent, 5 = good, 4 = sufficient (passing), 3-1 = failing
+const calculateSwissGrade = (percentage) => {
+  // Formula: Grade = 1 + (percentage / 100) * 5
+  // This gives a linear scale from 1.0 (0%) to 6.0 (100%)
+  // Rounded to nearest 0.5 (half grade) for realistic grading
+  const rawGrade = 1 + (percentage / 100) * 5;
+  const roundedGrade = Math.round(rawGrade * 2) / 2; // Round to nearest 0.5
+  
+  // Ensure grade is between 1.0 and 6.0
+  return Math.max(1.0, Math.min(6.0, roundedGrade));
+};
+
 // Submit quiz answer
 router.post('/submit', auth, async (req, res) => {
   try {
@@ -38,6 +51,12 @@ router.post('/submit', auth, async (req, res) => {
     const percentage = (correctCount / totalQuestions) * 100;
     const passed = percentage >= quiz.passingScore;
     
+    // Calculate Swiss grade if this is a comprehensive exam
+    let swissGrade = null;
+    if (quiz.isComprehensive) {
+      swissGrade = calculateSwissGrade(percentage);
+    }
+    
     const result = new Result({
       userId: req.userId,
       quizId,
@@ -46,6 +65,7 @@ router.post('/submit', auth, async (req, res) => {
       totalQuestions,
       percentage,
       passed,
+      swissGrade,
       timeTaken
     });
     
@@ -75,9 +95,34 @@ router.post('/submit', auth, async (req, res) => {
         percentage: percentage.toFixed(2),
         passed,
         timeTaken,
+        swissGrade: swissGrade ? swissGrade.toFixed(1) : null,
+        isComprehensive: quiz.isComprehensive || false,
         quizTitle: quiz.title,
         answers: detailedAnswers
       }
+    });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error', error: error.message });
+  }
+});
+
+// Get user statistics - MUST come before /user/history to avoid route conflicts
+router.get('/user/stats', auth, async (req, res) => {
+  try {
+    const results = await Result.find({ userId: req.userId });
+    
+    const totalQuizzes = results.length;
+    const passedQuizzes = results.filter(r => r.passed).length;
+    const averageScore = results.length > 0 
+      ? (results.reduce((sum, r) => sum + r.percentage, 0) / results.length).toFixed(2)
+      : 0;
+    
+    res.json({
+      totalQuizzes,
+      passedQuizzes,
+      failedQuizzes: totalQuizzes - passedQuizzes,
+      averageScore,
+      passRate: totalQuizzes > 0 ? ((passedQuizzes / totalQuizzes) * 100).toFixed(2) : 0
     });
   } catch (error) {
     res.status(500).json({ message: 'Server error', error: error.message });
@@ -113,29 +158,6 @@ router.get('/:resultId', auth, async (req, res) => {
     }
     
     res.json(result);
-  } catch (error) {
-    res.status(500).json({ message: 'Server error', error: error.message });
-  }
-});
-
-// Get user statistics
-router.get('/user/stats', auth, async (req, res) => {
-  try {
-    const results = await Result.find({ userId: req.userId });
-    
-    const totalQuizzes = results.length;
-    const passedQuizzes = results.filter(r => r.passed).length;
-    const averageScore = results.length > 0 
-      ? (results.reduce((sum, r) => sum + r.percentage, 0) / results.length).toFixed(2)
-      : 0;
-    
-    res.json({
-      totalQuizzes,
-      passedQuizzes,
-      failedQuizzes: totalQuizzes - passedQuizzes,
-      averageScore,
-      passRate: totalQuizzes > 0 ? ((passedQuizzes / totalQuizzes) * 100).toFixed(2) : 0
-    });
   } catch (error) {
     res.status(500).json({ message: 'Server error', error: error.message });
   }

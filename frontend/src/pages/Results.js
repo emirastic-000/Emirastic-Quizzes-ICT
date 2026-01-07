@@ -100,6 +100,12 @@ function Results() {
                   ></div>
                 </div>
               </div>
+              <button
+                className="view-review-btn"
+                onClick={() => navigate(`/result/${result._id}`, { state: { result } })}
+              >
+                📋 View Detailed Review
+              </button>
             </div>
           ))}
         </div>

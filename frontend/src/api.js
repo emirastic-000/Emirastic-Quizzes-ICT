@@ -110,6 +110,12 @@ export const resultsAPI = {
     return fetchWithErrorHandling(`${API_URL}/results/user/stats`, {
       headers: { 'Authorization': `Bearer ${token}` }
     });
+  },
+  
+  getResultById: async (token, resultId) => {
+    return fetchWithErrorHandling(`${API_URL}/results/${resultId}`, {
+      headers: { 'Authorization': `Bearer ${token}` }
+    });
   }
 };
 // Admin API

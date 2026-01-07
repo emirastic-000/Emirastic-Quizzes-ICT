@@ -17,7 +17,7 @@ const moduleQuestions = [
       { text: 'Ein strukturierter Änderungsantrag für IT-Services', isCorrect: false },
       { text: 'Ein neues Software-Projekt zur Optimierung', isCorrect: false }
     ],
-    explanation: 'Nach ITIL ist ein Incident eine ungeplante Unterbrechung oder Reduktion der Qualität eines IT-Service. Dies ist ein zentrales Konzept in der IT-Service-Unterstützung.',
+    explanation: 'Nach ITIL ist ein Incident eine ungeplante Unterbrechung oder Reduktion der Qualität eines IT-Service. Dies ist ein zentrales Konzept in der IT-Service-Unterstützung. Beispiele: Server-Ausfall, langsame Applikation, nicht funktionierender Drucker. Wichtig: Incidents sind UNGEPLANT - geplante Wartungen sind "Changes". Das Ziel ist, den Service schnellstmöglich wiederherzustellen.',
     difficulty: 'medium'
   },
   {
@@ -29,7 +29,7 @@ const moduleQuestions = [
       { text: 'Die Anfrage dokumentieren und kategorisieren', isCorrect: true },
       { text: 'Sofort mit der technischen Problemlösung beginnen', isCorrect: false }
     ],
-    explanation: 'Das Dokumentieren und Kategorisieren einer Support-Anfrage ist essentiell für Nachverfolgung, Eskalation und Wissensmanagement.',
+    explanation: 'Das Dokumentieren und Kategorisieren einer Support-Anfrage ist essentiell für Nachverfolgung, Eskalation und Wissensmanagement. Erfassen Sie: Kontaktdaten, genaue Problembeschreibung, Systemumgebung (OS, Software-Version), Fehlermeldungen, bereits versuchte Lösungen. Dies schafft eine Wissensdatenbank und ermöglicht spätere Analyse von Trends. Ein gut dokumentiertes Ticket spart Zeit bei Eskalation und Übergabe.',
     difficulty: 'easy'
   },
   {
@@ -41,7 +41,7 @@ const moduleQuestions = [
       { text: 'Nur die abgerechneten Kosten und Arbeitszeit', isCorrect: false },
       { text: 'Ausschließlich technische Systemlogs ohne Kontext', isCorrect: false }
     ],
-    explanation: 'Ein vollständiges Ticket beinhaltet: Kundenkontakt, detaillierte Problembeschreibung, Systemumgebung, versuchte Lösungsschritte, Erfolg/Misserfolg und Zeitstempel.',
+    explanation: 'Ein vollständiges Ticket beinhaltet: Kundenkontakt, detaillierte Problembeschreibung, Systemumgebung, versuchte Lösungsschritte, Erfolg/Misserfolg und Zeitstempel. Warum ist jedes Element wichtig? Kontakt ermöglicht Rückfragen, Problembeschreibung schafft Klarheit, Systemumgebung hilft bei Reproduktion, dokumentierte Schritte vermeiden Doppelarbeit, Zeitstempel dienen SLA-Tracking. Best Practice: Verwenden Sie strukturierte Felder statt Freitext wo möglich.',
     difficulty: 'easy'
   },
   {
@@ -53,7 +53,7 @@ const moduleQuestions = [
       { text: 'Alle Incidents innerhalb von 5 Minuten lösen', isCorrect: false },
       { text: 'Probleme dokumentieren ohne konkrete Lösungsmaßnahmen', isCorrect: false }
     ],
-    explanation: 'Problem Management konzentriert sich auf die Wurzelursachenanalyse, um wiederkehrende Incidents zu reduzieren und die Systemverfügbarkeit zu verbessern.',
+    explanation: 'Problem Management konzentriert sich auf die Wurzelursachenanalyse, um wiederkehrende Incidents zu reduzieren und die Systemverfügbarkeit zu verbessern. Unterschied zu Incident Management: Incident = schnelle Service-Wiederherstellung (Symptom-Behandlung), Problem = dauerhafte Lösung (Ursachen-Beseitigung). Beispiel: 10 User melden "Drucker druckt nicht" → 10 Incidents. Problem Management findet heraus: Drucker-Treiber veraltet → Update verhindert zukünftige Incidents. Tools: Root Cause Analysis (RCA), Ishikawa-Diagramm, 5-Why-Methode.',
     difficulty: 'hard'
   },
 
@@ -67,7 +67,7 @@ const moduleQuestions = [
       { text: 'Die Sachebene', isCorrect: true },
       { text: 'Die Appell-Ebene', isCorrect: false }
     ],
-    explanation: 'Die Sachebene (faktische Information) ist das, was explizit kommuniziert wird. Die Beziehungsebene betrifft die Beziehung zwischen den Parteien.',
+    explanation: 'Die Sachebene (faktische Information) ist das, was explizit kommuniziert wird. Das Vier-Ohren-Modell nach Schulz von Thun zeigt 4 Ebenen: 1) Sachinhalt (Fakten/Daten), 2) Selbstoffenbarung (was der Sender über sich preisgibt), 3) Beziehungsebene (wie Sender und Empfänger zueinander stehen), 4) Appell (wozu der Sender auffordert). Beispiel im Support: "Mein PC ist schon wieder kaputt!" - Sach: PC funktioniert nicht, Selbstoffenbarung: Ich bin frustriert, Beziehung: Ich erwarte besseren Service, Appell: Reparieren Sie das sofort! Im Support sollten Sie alle 4 Ebenen wahrnehmen.',
     difficulty: 'medium'
   },
   {
@@ -79,7 +79,7 @@ const moduleQuestions = [
       { text: 'Den Kunden auf SLA-Zeiten verweisen und vertrösten', isCorrect: false },
       { text: 'Mit komplexen technischen Details die Situation erklären', isCorrect: false }
     ],
-    explanation: 'Emotionale Intelligenz und Empathie sind Schlüsselkompetenzen im IT-Support für eine gute Kundenbeziehung.',
+    explanation: 'Emotionale Intelligenz und Empathie sind Schlüsselkompetenzen im IT-Support. Der richtige Ansatz: 1) Aktiv zuhören ohne Unterbrechen, 2) Frustration anerkennen ("Ich verstehe, dass dies ärgerlich ist"), 3) Verantwortung übernehmen ("Ich kümmere mich darum"), 4) Sachlich auf das Problem eingehen. Vermeiden: Defensive Haltung, Schuldzuweisungen, technisches Fachchinesisch. Merke: Ein frustrierter Kunde will gehört und ernst genommen werden, bevor er an der Lösung interessiert ist.',
     difficulty: 'easy'
   },
   {
@@ -91,7 +91,7 @@ const moduleQuestions = [
       { text: 'Volle Konzentration auf den Kunden, ohne Unterbrechen, mit Zusammenfassung und Klärungsfragen', isCorrect: true },
       { text: 'Parallel bereits nach Lösungen im Ticketsystem suchen', isCorrect: false }
     ],
-    explanation: 'Aktives Zuhören beinhaltet: volle Aufmerksamkeit, keine Unterbrechungen, Zusammenfassungen und Verständnisfragen stellen.',
+    explanation: 'Aktives Zuhören beinhaltet: volle Aufmerksamkeit, keine Unterbrechungen, Zusammenfassungen und Verständnisfragen stellen. Die 5 Komponenten: 1) Volle Konzentration (Multitasking vermeiden), 2) Nonverbale Bestätigung ("Hm", "Ja, verstehe"), 3) Paraphrasieren ("Wenn ich Sie richtig verstehe..."), 4) Klärungsfragen ("Können Sie das genauer beschreiben?"), 5) Zusammenfassung am Ende. Vorteile: Kunde fühlt sich gehört, besseres Problemverständnis, weniger Missverständnisse, schnellere Lösung.',
     difficulty: 'medium'
   },
   {
@@ -103,7 +103,7 @@ const moduleQuestions = [
       { text: 'Suggestivfragen die zur gewünschten Antwort führen', isCorrect: false },
       { text: 'Offene Fragen wie "Was ist passiert?" um detaillierte Informationen zu sammeln', isCorrect: true }
     ],
-    explanation: 'Offene Fragen ermöglichen dem Kunden, detaillierte Informationen zu geben, die für die Problemlösung essentiell sind.',
+    explanation: 'Offene Fragen ermöglichen dem Kunden, detaillierte Informationen zu geben, die für die Problemlösung essentiell sind. Fragetechniken im Support: OFFENE Fragen (W-Fragen: Was, Wie, Wann, Wo, Wer, Warum) für Details und Kontext. GESCHLOSSENE Fragen (Ja/Nein) nur zur Bestätigung konkreter Fakten. Beispiele: Schlecht: "Haben Sie auf OK geklickt?" (geschlossen, wenig Info). Gut: "Was ist genau passiert, als Sie die Datei öffnen wollten?" (offen, liefert Kontext). Die 5-Why-Methode: Fünfmal "Warum?" fragen um zur Wurzelursache zu gelangen.',
     difficulty: 'medium'
   },
 
@@ -117,7 +117,7 @@ const moduleQuestions = [
       { text: '1st Level (Erstkontakt), 2nd Level (Technisch), 3rd Level (Spezialist)', isCorrect: true },
       { text: 'Telefon-Support, E-Mail-Support, Chat-Support', isCorrect: false }
     ],
-    explanation: 'Diese Strukturierung ermöglicht effiziente Eskalation komplexerer Probleme zu spezialisierten Teams.',
+    explanation: 'Diese Strukturierung ermöglicht effiziente Eskalation komplexerer Probleme zu spezialisierten Teams. Details: 1ST LEVEL (Help Desk): Erstkontakt, Ticket-Erfassung, einfache Probleme (Passwortreset, Standardfragen), Lösungsrate ~70-80%. 2ND LEVEL (Technical Support): Komplexere technische Probleme, erweiterte Systemkenntnisse, Software-Troubleshooting, Konfiguration. 3RD LEVEL (Specialist/Engineering): Hochspezialisiert, Entwickler-Level, Systembezogene Probleme, R&D-Involvement. Vorteil: Effiziente Ressourcennutzung, schnellere Lösungen durch richtige Zuweisung.',
     difficulty: 'easy'
   },
   {
@@ -129,7 +129,7 @@ const moduleQuestions = [
       { text: 'Nur wenn der Kunde explizit danach fragt', isCorrect: false },
       { text: 'Sobald der 1st Level Agent Feierabend macht', isCorrect: false }
     ],
-    explanation: 'Eskalation basiert auf Problemkomplexität und verfügbarem Wissen, nicht auf Zeit oder Kundenungeduld.',
+    explanation: 'Eskalation basiert auf Problemkomplexität und verfügbarem Wissen, nicht auf Zeit oder Kundenungeduld. Eskalationskriterien: 1) Problem außerhalb des Wissensstands, 2) Standard-Lösungen funktionieren nicht, 3) Spezialwissen erforderlich (z.B. Datenbank-Admin), 4) Hohe Business-Impact erfordert Senior-Involvement. NICHT eskalieren bei: Kunde ist nur ungeduldig (Kommunikation!), Problem ist lösbar aber zeitintensiv, fehlende Eigeninitiative. Tipp: Lieber zu früh eskalieren als zu spät - Zeit ist Geld.',
     difficulty: 'medium'
   },
   {
@@ -167,7 +167,7 @@ const moduleQuestions = [
       { text: 'Das Problem systematisch dokumentieren und die Umgebung erfassen', isCorrect: true },
       { text: 'Einen Neustart durchführen und hoffen dass es funktioniert', isCorrect: false }
     ],
-    explanation: 'Systematische Dokumentation ist der Schlüssel zu reproduzierbaren und effizienten Lösungen.',
+    explanation: 'Systematische Dokumentation ist der Schlüssel zu reproduzierbaren und effizienten Lösungen. Der professionelle Troubleshooting-Prozess: 1) PROBLEM IDENTIFIZIEREN: Was genau funktioniert nicht? Fehlermeldungen? Seit wann? 2) UMGEBUNG ERFASSEN: OS-Version, Software-Version, Hardware-Spezifikationen, Netzwerk-Setup. 3) ÄNDERUNGEN ERMITTELN: Was wurde zuletzt geändert? Updates? Neue Software? 4) REPRODUZIEREN: Kann das Problem konsistent reproduziert werden? Dokumentation ermöglicht: Wissenstransfer, Mustererkennung, Qualitätssicherung, Auditing.',
     difficulty: 'easy'
   },
   {
@@ -179,7 +179,7 @@ const moduleQuestions = [
       { text: 'Parallel mehrere Änderungen durchführen um Zeit zu sparen', isCorrect: false },
       { text: 'Nur die wahrscheinlichste Ursache prüfen', isCorrect: false }
     ],
-    explanation: 'Systematisches Troubleshooting reduziert die Zeit zur Problemidentifikation und verhindert unnötige Änderungen.',
+    explanation: 'Systematisches Troubleshooting reduziert die Zeit zur Problemidentifikation und verhindert unnötige Änderungen. Die Divide-and-Conquer Methode: 1) System in Komponenten aufteilen (Hardware/Software/Netzwerk), 2) Jede Komponente einzeln testen, 3) Problem eingrenzen durch Ausschlussprinzip. WICHTIG: Nur EINE Änderung auf einmal! Sonst wissen Sie nicht, was geholfen hat. Beispiel: PC startet nicht → Test 1: Monitor-Kabel, Test 2: Stromkabel, Test 3: RAM-Module einzeln, etc. Tools: Event Viewer, Systemlogs, Hardware-Diagnose-Tools.',
     difficulty: 'medium'
   },
   {
@@ -203,7 +203,7 @@ const moduleQuestions = [
       { text: 'Das WLAN-Passwort überprüfen und die Netzwerk-Konfiguration des Geräts prüfen', isCorrect: true },
       { text: 'Dem Benutzer ein neues Gerät zuweisen', isCorrect: false }
     ],
-    explanation: 'Mit einfachen Fragen beginnen (Netzwerkkennwort, Geräte-Einstellungen) bevor komplexere Maßnahmen getroffen werden.',
+    explanation: 'Mit einfachen Fragen beginnen (Netzwerkkennwort, Geräte-Einstellungen) bevor komplexere Maßnahmen getroffen werden. WLAN-Troubleshooting-Checkliste: 1) EINFACH: Passwort korrekt? WLAN aktiviert? Flugmodus aus? 2) KONFIGURATION: Richtige SSID ausgewählt? IP-Adresse erhalten (ipconfig)? DNS funktioniert? 3) GERÄT: Andere Geräte funktionieren? Treiber aktuell? Netzwerkadapter aktiviert? 4) NETZWERK: Router erreichbar? Signal-Stärke ausreichend? Kanalüberlastung? Prinzip: Von einfach zu komplex, von wahrscheinlich zu unwahrscheinlich.',
     difficulty: 'medium'
   },
 
@@ -217,7 +217,7 @@ const moduleQuestions = [
       { text: 'Severity = Auswirkung auf Geschäft; Priority = Dringlichkeit der Behandlung', isCorrect: true },
       { text: 'Sie sind identisch und werden synonym verwendet', isCorrect: false }
     ],
-    explanation: 'Ein kritisches Problem (hohe Severity) kann niedrige Priority haben wenn es nur wenige Nutzer betrifft; umgekehrt kann ein kleines Problem hohe Priority haben.',
+    explanation: 'Ein kritisches Problem (hohe Severity) kann niedrige Priority haben wenn es nur wenige Nutzer betrifft; umgekehrt kann ein kleines Problem hohe Priority haben. SEVERITY (Schweregrad): Technische/Business-Auswirkung. S1-Critical: Totaler Systemausfall, S2-High: Wesentliche Funktion ausgefallen, S3-Medium: Teilfunktion betroffen, S4-Low: Kosmetischer Fehler. PRIORITY (Dringlichkeit): Wann muss es gelöst werden? P1-Immediate: Sofort, P2-High: Heute, P3-Normal: Diese Woche, P4-Low: Geplant. Beispiel: CEO kann nicht drucken (niedrige Severity, hohe Priority). Backup-Server down nachts (hohe Severity, mittlere Priority).',
     difficulty: 'hard'
   },
   {
@@ -241,7 +241,7 @@ const moduleQuestions = [
       { text: 'Ein Standard für die Systemarchitektur', isCorrect: false },
       { text: 'Eine Sicherheitsrichtlinie für Login-Authentifizierung', isCorrect: false }
     ],
-    explanation: 'SLAs definieren klare Erwartungen für Response- und Resolution-Zeiten basierend auf Severity.',
+    explanation: 'SLAs definieren klare Erwartungen für Response- und Resolution-Zeiten basierend auf Severity. Ein SLA (Service Level Agreement) beinhaltet typisch: 1) VERFÜGBARKEIT: z.B. 99.9% Uptime (max 8.76h Downtime/Jahr), 2) RESPONSE TIME: Wie schnell wird reagiert? (P1: 15min, P2: 1h, P3: 4h, P4: 24h), 3) RESOLUTION TIME: Maximale Lösungszeit, 4) SUPPORT-ZEITEN: 24/7 oder Geschäftszeiten? Beispiel SLA: "P1-Incidents werden innerhalb 30 Minuten beantwortet und in 4 Stunden gelöst". Konsequenzen bei SLA-Verletzung: Finanzielle Strafzahlungen, Eskalation, Vertragsstrafen.',
     difficulty: 'medium'
   },
   {
@@ -253,7 +253,7 @@ const moduleQuestions = [
       { text: 'Nur eine E-Mail an das Team senden', isCorrect: false },
       { text: 'Das Problem in der internen Wissensdatenbank verstecken', isCorrect: false }
     ],
-    explanation: 'Abschluss-Dokumentation und Kundenkommunikation sind essentiell für Zufriedenheit und Wissensverwaltung.',
+    explanation: 'Abschluss-Dokumentation und Kundenkommunikation sind essentiell für Zufriedenheit und Wissensverwaltung. Der professionelle Incident-Abschluss: 1) LÖSUNG DOKUMENTIEREN: Was war das Problem? Was hat funktioniert? Welche Steps wurden unternommen? 2) KNOWLEDGE BASE: Lösung in Wissensdatenbank eintragen für zukünftige Fälle, 3) KUNDEN INFORMIEREN: E-Mail mit Zusammenfassung und Lösung, Bestätigung einholen, 4) TICKET SCHLIESSEN: Status auf "Resolved" setzen, 5) FOLLOW-UP: Nach 24-48h nachfragen ob alles funktioniert. Dies verhindert "Zombie-Tickets" und steigert Kundenzufriedenheit.',
     difficulty: 'easy'
   },
 
@@ -267,7 +267,7 @@ const moduleQuestions = [
       { text: 'Nur Software-Updates ohne Hardware-Prüfung', isCorrect: false },
       { text: 'Reaktive Maßnahmen nach Kundenbeschwerd en', isCorrect: false }
     ],
-    explanation: 'Vorbeugende Wartung reduziert unerwartete Ausfallzeiten und verlängert die Hardware-Lebensdauer.',
+    explanation: 'Vorbeugende Wartung reduziert unerwartete Ausfallzeiten und verlängert die Hardware-Lebensdauer. PREVENTIVE MAINTENANCE umfasst: 1) HARDWARE: Lüfter reinigen, Festplatten-Gesundheit prüfen (SMART), Thermalpaste erneuern, Kabelverbindungen prüfen, 2) SOFTWARE: Updates installieren, Sicherheitspatches, Treiber-Updates, Antivirus-Scans, 3) DATEN: Backups verifizieren, Logfiles rotieren, Datenbank-Optimierung, 4) DOKUMENTATION: Inventar aktualisieren, Lizenzen prüfen. Kosten: Proaktiv 10-20% Budget, Reaktiv kann 80% kosten! Motto: "Eine Unze Prävention ist ein Pfund Heilung wert."',
     difficulty: 'medium'
   },
   {
@@ -291,7 +291,7 @@ const moduleQuestions = [
       { text: 'Ausschließlich VPN-Zugang', isCorrect: false },
       { text: 'Nur E-Mail und Telefon', isCorrect: false }
     ],
-    explanation: 'Remote Support erfordert Koordination mehrerer Technologien für effektive Unterstützung.',
+    explanation: 'Remote Support erfordert Koordination mehrerer Technologien für effektive Unterstützung. Essential Remote Support Stack: 1) REMOTE ACCESS: TeamViewer, AnyDesk, Windows Remote Desktop, Chrome Remote Desktop - für Bildschirmzugriff und Steuerung, 2) KOMMUNIKATION: Teams, Zoom, Slack - für Voice/Video/Chat, 3) TICKETING: Jira Service Desk, Zendesk, ServiceNow - für Tracking, 4) DOKUMENTATION: Confluence, SharePoint - Wissensdatenbank, 5) MONITORING: Nagios, PRTG - System-Überwachung. Best Practice: Immer Kundenzustimmung einholen vor Remote-Zugriff!',
     difficulty: 'medium'
   },
   {
@@ -303,7 +303,7 @@ const moduleQuestions = [
       { text: 'Remote-Support benötigt keine technischen Kenntnisse', isCorrect: false },
       { text: 'Remote-Support ist immer kostengünstiger unabhängig vom Problem', isCorrect: false }
     ],
-    explanation: 'Remote Support bietet Effizienzvorteile, kann aber Limitierungen bei physischen Interaktionen haben.',
+    explanation: 'Remote Support bietet Effizienzvorteile, kann aber Limitierungen bei physischen Interaktionen haben. VORTEILE: 1) SCHNELLIGKEIT: Sofortiger Zugriff, keine Anfahrt (spart 30-60min), 2) EFFIZIENZ: Mehrere Kunden parallel betreuen, Screen-Sharing für klare Kommunikation, 3) KOSTEN: Keine Reisekosten, Zeitersparnis, 4) DOKUMENTATION: Session-Recordings, Screenshots. NACHTEILE: 1) Hardware-Probleme schwer diagnostizierbar, 2) Netzwerk-Abhängigkeit, 3) Sicherheitsrisiken, 4) Weniger persönlicher Kontakt. Faustregel: 80% der Probleme remote lösbar, 20% brauchen On-Site.',
     difficulty: 'medium'
   }
 ];
@@ -415,10 +415,11 @@ async function seedDatabase() {
       category: 'Comprehensive',
       questions: allQs.map(q => q._id),
       timeLimit: 60,
-      passingScore: 80
+      passingScore: 80,
+      isComprehensive: true // Mark as comprehensive exam for Swiss grading
     });
     await finalExam.save();
-    console.log('🏆 Abschlussprüfung erstellt: Modul 437 Komplett');
+    console.log('🏆 Abschlussprüfung erstellt: Modul 437 Komplett (mit Schweizer Notensystem)');
 
     console.log('\n=== 📊 Seed Zusammenfassung ===');
     console.log(`✅ ${insertedQuestions.length} Fragen eingefügt`);

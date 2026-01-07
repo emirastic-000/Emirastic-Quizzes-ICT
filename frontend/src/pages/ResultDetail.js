@@ -1,20 +1,55 @@
-import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { resultsAPI } from '../api';
+import { useAuth } from '../context/AuthContext';
 import './Results.css';
 
 function ResultDetail() {
   const location = useLocation();
   const navigate = useNavigate();
-  const result = location.state?.result;
+  const { resultId } = useParams();
+  const { token } = useAuth();
+  const [result, setResult] = useState(location.state?.result || null);
+  const [loading, setLoading] = useState(!location.state?.result);
+  const [error, setError] = useState(null);
 
-  if (!result) {
+  useEffect(() => {
+    // If result is already in state, no need to fetch
+    if (location.state?.result) {
+      return;
+    }
+
+    // Fetch result from API if not in state
+    const fetchResult = async () => {
+      try {
+        setLoading(true);
+        const data = await resultsAPI.getResultById(token, resultId);
+        setResult(data);
+      } catch (err) {
+        console.error('Failed to load result:', err);
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (resultId && token) {
+      fetchResult();
+    }
+  }, [resultId, token, location.state]);
+
+  if (loading) {
+    return <div className="results-loading">Loading result...</div>;
+  }
+
+  if (error || !result) {
     return (
       <div className="results-container">
         <div className="results-header">
           <h1>Quiz Result</h1>
         </div>
         <div className="no-results">
-          <p>No result data available.</p>
+          <p>{error || 'No result data available.'}</p>
           <button onClick={() => navigate('/dashboard')} className="back-btn">
             Back to Dashboard
           </button>
@@ -54,6 +89,19 @@ function ResultDetail() {
             <div className="stat-value">{percentage.toFixed(1)}%</div>
           </div>
 
+          {result.isComprehensive && result.swissGrade && (
+            <div className="stat-item swiss-grade">
+              <div className="stat-label">Swiss Grade</div>
+              <div className="stat-value grade-highlight">{result.swissGrade}</div>
+              <div className="grade-description">
+                {parseFloat(result.swissGrade) >= 5.5 ? '🌟 Excellent' :
+                 parseFloat(result.swissGrade) >= 5.0 ? '👍 Good' :
+                 parseFloat(result.swissGrade) >= 4.0 ? '✓ Sufficient' :
+                 '✗ Insufficient'}
+              </div>
+            </div>
+          )}
+
           {result.timeTaken !== undefined && (
             <div className="stat-item">
               <div className="stat-label">Time Taken</div>
@@ -79,6 +127,25 @@ function ResultDetail() {
         {/* Detailed Question Review */}
         {result.answers && result.answers.length > 0 && (
           <div className="question-review-section">
+            {result.isComprehensive && result.swissGrade && (
+              <div className={`swiss-grade-section ${
+                parseFloat(result.swissGrade) >= 5.5 ? 'excellent' :
+                parseFloat(result.swissGrade) >= 5.0 ? 'good' :
+                parseFloat(result.swissGrade) >= 4.0 ? 'sufficient' :
+                'insufficient'
+              }`}>
+                <h3>🎓 Swiss Grading System (1-6 Scale)</h3>
+                <div className="grade-display">
+                  <div className="grade-highlight">{result.swissGrade}</div>
+                  <div className="grade-description">
+                    {parseFloat(result.swissGrade) >= 5.5 ? '🌟 Excellent (Sehr gut)' :
+                     parseFloat(result.swissGrade) >= 5.0 ? '👍 Good (Gut)' :
+                     parseFloat(result.swissGrade) >= 4.0 ? '✓ Sufficient (Genügend)' :
+                     '✗ Insufficient (Ungenügend)'}
+                  </div>
+                </div>
+              </div>
+            )}
             <h3 className="review-heading">
               Question by Question Review
             </h3>

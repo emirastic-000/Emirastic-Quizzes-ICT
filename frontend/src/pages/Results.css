@@ -257,6 +257,93 @@
   border-bottom: 2px solid #f0f0f0;
 }
 
+/* Swiss Grade Display */
+.swiss-grade-section {
+  margin: 2rem 0;
+  padding: 2rem;
+  background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+  border-radius: 12px;
+  border: 3px solid #fdcb6e;
+  box-shadow: 0 6px 25px rgba(253, 203, 110, 0.3);
+  text-align: center;
+}
+
+.swiss-grade-section h3 {
+  margin: 0 0 1rem 0;
+  color: #2d3436;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.grade-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.grade-highlight {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #2d3436;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  line-height: 1;
+  margin: 0.5rem 0;
+}
+
+.grade-description {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d3436;
+  margin: 0;
+}
+
+.swiss-grade-section.excellent {
+  background: linear-gradient(135deg, #55efc4 0%, #00b894 100%);
+  border-color: #00b894;
+  box-shadow: 0 6px 25px rgba(0, 184, 148, 0.3);
+}
+
+.swiss-grade-section.good {
+  background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+  border-color: #0984e3;
+  box-shadow: 0 6px 25px rgba(9, 132, 227, 0.3);
+}
+
+.swiss-grade-section.sufficient {
+  background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+  border-color: #fdcb6e;
+  box-shadow: 0 6px 25px rgba(253, 203, 110, 0.3);
+}
+
+.swiss-grade-section.insufficient {
+  background: linear-gradient(135deg, #fab1a0 0%, #e17055 100%);
+  border-color: #e17055;
+  box-shadow: 0 6px 25px rgba(225, 112, 85, 0.3);
+}
+
+/* View Review Button */
+.view-review-btn {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.view-review-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
 .stat-item {
   text-align: center;
 }

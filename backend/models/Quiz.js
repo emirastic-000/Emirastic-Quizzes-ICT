@@ -20,6 +20,10 @@ const quizSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
+  isComprehensive: {
+    type: Boolean,
+    default: false
+  },
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',

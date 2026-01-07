@@ -83,7 +83,7 @@ function App() {
           }
         />
         <Route
-          path="/result"
+          path="/result/:resultId"
           element={
             <ProtectedRoute>
               <ResultDetail />

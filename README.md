@@ -2,6 +2,7 @@
 
 > A modern fullstack quiz application for ICT-Fachmann EFZ apprenticeships in Switzerland
 
+[![Version](https://img.shields.io/badge/Version-0.2.0-blue.svg)](CHANGELOG.md)
 [![Node.js](https://img.shields.io/badge/Node.js-v14+-green.svg)](https://nodejs.org/)
 [![React](https://img.shields.io/badge/React-18-blue.svg)](https://reactjs.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-5.0+-green.svg)](https://www.mongodb.com/)
@@ -11,19 +12,28 @@
 
 Emirastic ICT Quiz helps learners test their knowledge across official ICT-Fachmann EFZ modules with interactive quizzes based on the Swiss ICT apprenticeship curriculum.
 
+**Current Version: 0.2.0** - [See what's new](CHANGELOG.md)
+
 **Supported Modules:**
 - **Module 117**: IT and network infrastructure for small businesses
 - **Module 431**: Independent task execution in professional environment  
-- **Module 437**: IT support operations
+- **Module 437**: IT support operations (with Swiss grading system for final exam)
 
 ## ✨ Features
 
+### Core Features
 - 🔐 **Secure Authentication** - JWT-based user registration and login
 - 📚 **Module Organization** - Quizzes aligned with official ICT modules
 - ⏱️ **Interactive Quizzes** - Real-time timer, progress tracking, and navigation
 - 📊 **Performance Analytics** - Detailed results and quiz history
 - 👨‍💼 **Admin Panel** - User and quiz management dashboard
 - 📱 **Responsive Design** - Works seamlessly on all devices
+
+### New in Version 0.2.0
+- 🎓 **Swiss Grading System (1-6)** - Authentic Swiss grading for comprehensive exams
+- 📖 **Enhanced Explanations** - Deep-dive explanations with practical examples and best practices
+- 🔄 **Persistent Results** - View quiz reviews anytime, even after page refresh
+- 🎨 **Improved UI** - Color-coded grades, better result displays, professional styling
 
 ## 🚀 Getting Started
 
