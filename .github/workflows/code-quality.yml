@@ -1,0 +1,49 @@
+name: Code Quality
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  code-quality:
+    name: Code Quality Checks
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
+
+    - name: Install dependencies
+      run: |
+        cd backend && npm ci
+        cd ../frontend && npm ci
+
+    - name: Check code formatting (backend)
+      run: |
+        cd backend
+        npm run format:check --if-present
+      continue-on-error: true
+
+    - name: Check code formatting (frontend)
+      run: |
+        cd frontend
+        npm run format:check --if-present
+      continue-on-error: true
+
+    - name: Run ESLint (backend)
+      run: |
+        cd backend
+        npm run lint --if-present
+      continue-on-error: true
+
+    - name: Run ESLint (frontend)
+      run: |
+        cd frontend
+        npm run lint --if-present
+      continue-on-error: true
