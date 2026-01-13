@@ -36,7 +36,31 @@ Emirastic ICT Quiz helps learners test their knowledge across official ICT-Fachm
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### 🪟 Windows Users - One-Click Setup! (Recommended)
+
+**The easiest way to get started on Windows:**
+
+1. **Download the project** (clone or download ZIP from GitHub)
+2. **Run:** `setup-windows.bat`
+3. **Done!** The script handles everything automatically
+
+The setup script will:
+- ✅ Check prerequisites (Node.js, MongoDB)
+- ✅ Install all dependencies
+- ✅ Configure environment variables  
+- ✅ Seed the database with quiz content
+- ✅ Start the application
+
+📖 **Detailed Guide:** See [QUICK_START_WINDOWS.md](QUICK_START_WINDOWS.md)
+
+**Access:** http://localhost:3000  
+**Login:** `admin@module437.test` / `admin123456`
+
+---
+
+### 🛠️ Manual Installation (All Platforms)
+
+#### Prerequisites
 
 Before you begin, ensure you have the following installed:
 
@@ -51,13 +75,13 @@ Before you begin, ensure you have the following installed:
 3. **Git** (optional, for cloning)
    - Download from [git-scm.com](https://git-scm.com/)
 
-### Installation
+#### Installation Steps
 
-#### Step 1: Download the Project
+##### Step 1: Download the Project
 
 **Option A: Clone with Git**
 ```bash
-git clone https://github.com/yourusername/emirastic-ict-quiz.git
+git clone https://github.com/emirastic-000/Emirastic-Quizzes-ICT.git
 cd emirastic-ict-quiz
 ```
 
