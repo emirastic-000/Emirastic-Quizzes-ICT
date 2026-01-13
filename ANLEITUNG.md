@@ -4,7 +4,7 @@
 
 Diese Anleitung hilft Ihnen dabei, die Quiz-Anwendung auf Ihrem Computer einzurichten und zu starten. Sie brauchen keine IT-Vorkenntnisse - folgen Sie einfach Schritt für Schritt dieser Anleitung.
 
-**Geschätzte Zeit:** 15-20 Minuten
+**Geschätzte Zeit:** 2 Minuten (automatische Installation) oder 15-20 Minuten (manuelle Installation)
 
 ---
 
@@ -16,7 +16,41 @@ Diese Anleitung hilft Ihnen dabei, die Quiz-Anwendung auf Ihrem Computer einzuri
 
 ---
 
-## 📋 Schritt 1: Benötigte Programme installieren
+## ⚡ Option A: Automatische Installation (Empfohlen für Windows)
+
+**Neu in Version 0.3:** Wir haben die Installation stark vereinfacht!
+
+### Voraussetzungen prüfen
+Sie benötigen **nur 2 Programme** bereits installiert:
+1. **Node.js** (Version 16 oder höher)
+2. **MongoDB** (Version 5.0 oder höher)
+
+Wenn Sie diese Programme noch nicht haben, folgen Sie den Anweisungen unter "Option B: Manuelle Installation" → Schritt 1.
+
+### Automatische Einrichtung starten
+
+1. Öffnen Sie den Projektordner (z.B. `C:\Users\Public\Helpdesk Quiz`)
+2. **Doppelklicken** Sie auf die Datei: **`setup-windows.bat`**
+3. Das Setup-Skript wird automatisch:
+   - ✅ Node.js und MongoDB erkennen
+   - ✅ Alle benötigten Pakete installieren
+   - ✅ Die Datenbank mit Quiz-Fragen befüllen
+   - ✅ Optional: Die Anwendung starten
+
+**Das war's!** Nach 1-2 Minuten sollte die Anwendung bereit sein.
+
+> 💡 **Tipp:** Wenn Sie in Zukunft die Anwendung starten möchten, doppelklicken Sie einfach auf **`start-all.bat`**
+
+### Fehlerbehebung bei automatischer Installation
+- **"Node.js nicht gefunden"**: Installieren Sie Node.js (siehe Option B → Schritt 1.1)
+- **"MongoDB nicht gefunden"**: Installieren Sie MongoDB (siehe Option B → Schritt 1.2)
+- Falls Probleme auftreten: Verwenden Sie die manuelle Installation (Option B)
+
+---
+
+## 📋 Option B: Manuelle Installation
+
+### Schritt 1: Benötigte Programme installieren
 
 Bevor Sie starten können, müssen drei Programme auf Ihrem Computer installiert sein:
 

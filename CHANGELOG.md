@@ -5,6 +5,22 @@ All notable changes to the Emirastic ICT Quiz project will be documented in this
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.1] - 2026-01-13
+
+### Changed
+- **Enhanced Module 117 Quiz Difficulty**: Made all wrong answers more sophisticated and professional-sounding to better challenge students
+  - Added technical jargon and networking terminology to distractors
+  - Replaced obviously incorrect answers with plausible but technically wrong options
+  - Questions now require actual networking knowledge rather than just common sense
+  - Examples: Using terms like "VLAN Pruning", "DHCP Snooping", "802.1Q Encapsulation", etc.
+  
+### Improved
+- **German Setup Tutorial (ANLEITUNG.md)**: Added automated installation option
+  - New Option A: 2-minute automated setup using `setup-windows.bat`
+  - Reorganized as Option B: Manual installation for users preferring step-by-step
+  - Updated time estimates (2 min auto vs 15-20 min manual)
+  - Added troubleshooting section for automated setup
+
 ## [0.3.0] - 2026-01-13
 
 ### Added - Module 117 Content
