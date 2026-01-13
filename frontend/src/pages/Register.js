@@ -27,7 +27,7 @@ function Register() {
     setError('');
 
     if (formData.password !== formData.passwordConfirm) {
-      setError(t('messages.error') + ': ' + 'Passwords do not match');
+      setError(t('messages.error') + ': Passwords do not match');
       return;
     }
 

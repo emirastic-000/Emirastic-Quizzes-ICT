@@ -9,7 +9,6 @@ import './Home.css';
 function Home() {
   const navigate = useNavigate();
   const { user } = useAuth();
-  const { t } = useLanguage();
   const [quizzes, setQuizzes] = useState([]);
   const [loading, setLoading] = useState(true);
 

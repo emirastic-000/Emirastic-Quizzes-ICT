@@ -56,7 +56,7 @@ Submit feature requests as GitHub issues with:
 ### Contributing Code
 
 Areas where we need help:
-- Adding questions for Modules 117 and 431
+- Adding questions for Module 117
 - Improving quiz explanations
 - Enhancing UI/UX
 - Adding accessibility features
@@ -330,7 +330,7 @@ When adding or modifying quiz questions:
    ```javascript
    {
      questionText: "Clear, specific question in German",
-     category: "Module 117" | "Module 431" | "Module 437",
+     category: "Module 117" | "Module 437",
      difficulty: "beginner" | "intermediate" | "advanced",
      options: [
        "Correct answer (plausible)",

@@ -14,15 +14,6 @@ function AdminUsers() {
   const [userActivity, setUserActivity] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
 
-  useEffect(() => {
-    if (!user?.isAdmin) {
-      navigate('/dashboard');
-      return;
-    }
-
-    fetchUsers();
-  }, [user, token, navigate]);
-
   const fetchUsers = async () => {
     try {
       setLoading(true);
@@ -34,6 +25,16 @@ function AdminUsers() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (!user?.isAdmin) {
+      navigate('/dashboard');
+      return;
+    }
+
+    fetchUsers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user, token, navigate]);
 
   const handleDeleteUser = async (userId) => {
     if (!window.confirm('Are you sure you want to delete this user? This action cannot be undone.')) {

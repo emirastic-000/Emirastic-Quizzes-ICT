@@ -8,6 +8,7 @@ const questionSchema = new mongoose.Schema({
   category: {
     type: String,
     enum: [
+      // Module 437 Categories
       'Support Process',
       'Communication',
       'Ticketing & Documentation',
@@ -15,7 +16,18 @@ const questionSchema = new mongoose.Schema({
       'Incident Management',
       'Troubleshooting',
       'Customer Service',
-      'Remote Support'
+      'Remote Support',
+      // Module 117 Categories
+      'Network Planning',
+      'Switching',
+      'VLANs',
+      'DHCP',
+      'DNS',
+      'IP Management',
+      'Routing',
+      'Wireless',
+      'Security',
+      'Backup'
     ],
     required: true
   },

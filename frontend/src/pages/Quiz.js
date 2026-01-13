@@ -46,7 +46,7 @@ function Quiz() {
         token
       );
       // Navigate to result detail page with result data
-      navigate('/result', { state: { result: data.result } });
+      navigate(`/result/${data.result._id}`, { state: { result: data.result } });
     } catch (err) {
       console.error('Failed to submit quiz:', err);
       alert(err.message || 'Failed to submit quiz. Please try again.');

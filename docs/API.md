@@ -228,7 +228,6 @@ Get list of all question categories.
 ```json
 [
   "Module 117",
-  "Module 431",
   "Module 437"
 ]
 ```
@@ -338,8 +337,7 @@ Authorization: Bearer <token>
   "totalTimeSpent": 10800,
   "quizzesByCategory": {
     "Module 437": 10,
-    "Module 117": 3,
-    "Module 431": 2
+    "Module 117": 3
   },
   "recentActivity": [
     {

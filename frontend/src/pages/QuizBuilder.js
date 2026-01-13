@@ -41,26 +41,7 @@ export default function QuizBuilder() {
 
   const [editingQuestionId, setEditingQuestionId] = useState(null);
 
-  // Load data
-  useEffect(() => {
-    loadQuestions();
-    loadQuizzes();
-    loadCategories();
-  }, [token]);
-
-  // Only admins can access quiz builder - check after hooks
-  if (!user || !user.isAdmin) {
-    return (
-      <div className="builder-container">
-        <div className="access-denied">
-          <h2>🔒 Access Denied</h2>
-          <p>Only administrators can access the Quiz Builder.</p>
-          <p>Please contact your administrator if you need to create quizzes.</p>
-        </div>
-      </div>
-    );
-  }
-
+  // Load data - defined here for useCallback
   const loadQuestions = async () => {
     try {
       setLoading(true);
@@ -78,7 +59,7 @@ export default function QuizBuilder() {
       const data = await builderAPI.getCustomQuizzes(token);
       setQuizzes(data);
     } catch (err) {
-      console.error('Failed to load quizzes');
+      setError('Failed to load quizzes');
     }
   };
 
@@ -87,9 +68,47 @@ export default function QuizBuilder() {
       const data = await builderAPI.getCategories();
       setCategories(data.categories);
     } catch (err) {
-      console.error('Failed to load categories');
+      console.error('Failed to load categories:', err);
     }
   };
+
+  // Load data on mount
+  useEffect(() => {
+    if (user && user.isAdmin && token) {
+      loadQuestions();
+      loadQuizzes();
+      loadCategories();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [token, user]);
+
+  // Clear messages
+  useEffect(() => {
+    if (error) {
+      const timer = setTimeout(() => setError(''), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [error]);
+
+  useEffect(() => {
+    if (success) {
+      const timer = setTimeout(() => setSuccess(''), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [success]);
+
+  // Only admins can access quiz builder - check after hooks
+  if (!user || !user.isAdmin) {
+    return (
+      <div className="builder-container">
+        <div className="access-denied">
+          <h2>🔒 Access Denied</h2>
+          <p>Only administrators can access the Quiz Builder.</p>
+          <p>Please contact your administrator if you need to create quizzes.</p>
+        </div>
+      </div>
+    );
+  }
 
   // Question handlers
   const handleAddOption = () => {
@@ -274,12 +293,6 @@ export default function QuizBuilder() {
       passingScore: 70
     });
   };
-
-  // Clear messages
-  useEffect(() => {
-    if (error) setTimeout(() => setError(''), 5000);
-    if (success) setTimeout(() => setSuccess(''), 5000);
-  }, [error, success]);
 
   return (
     <div className="builder-container">

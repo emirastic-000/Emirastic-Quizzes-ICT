@@ -26,7 +26,6 @@ How does this feature enhance the learning experience for ICT apprentices?
 ## 🎓 Module Alignment
 Which ICT module(s) would this feature support?
 - [ ] Module 117
-- [ ] Module 431
 - [ ] Module 437
 - [ ] General/All modules
 

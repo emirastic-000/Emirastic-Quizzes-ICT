@@ -9,11 +9,8 @@ import './ModuleView.css';
 function ModuleView() {
   const { categoryId } = useParams();
   const navigate = useNavigate();
-  const { token } = useAuth();
-  const { t } = useLanguage();
   const [quizzes, setQuizzes] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
 
   const category = getCategoryById(categoryId);
 

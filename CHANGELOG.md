@@ -5,6 +5,56 @@ All notable changes to the Emirastic ICT Quiz project will be documented in this
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0] - 2026-01-13
+
+### Added - Module 117 Content
+- **Module 117 Quizzes**: Added complete quiz suite for Module 117 (Informatik- und Netzinfrastruktur für KMU)
+  - 15 advanced-level questions covering network infrastructure for small businesses
+  - 4 quizzes: Network Planning, Network Services, Security & Wireless, Final Exam
+  - Topics: IP addressing, subnetting, VLANs, DHCP, DNS, routing, WLAN security, backup strategies
+  - Difficulty level: Intentionally harder than Module 437 quizzes for advanced learners
+- **New Question Categories**: Added 12 Module 117 categories to Question model
+  - Network Planning, Switching, VLANs, DHCP, DNS, IP Management, Routing, Wireless, Security, Backup
+- **Module Field**: Enhanced Question schema to distinguish between Module 437 and Module 117 content
+
+### Module 117 Quiz Details
+1. **🌐 Netzwerk-Grundlagen & Planung** (25 min, 75% passing)
+   - Subnetting calculations with VLSM
+   - Network documentation best practices
+   - Switch port configuration (Access ports, PortFast, BPDU Guard)
+   - VLAN design and implementation for small businesses
+
+2. **⚙️ Netzwerkdienste & Routing** (30 min, 75% passing)
+   - DHCP server configuration and scope planning
+   - DHCP troubleshooting methodology
+   - APIPA vs manual IP addressing
+   - Inter-VLAN routing (Router-on-a-Stick vs Layer-3 switches)
+   - Static vs dynamic routing for SMB networks
+   - DNS record types and configuration
+   - DNS troubleshooting
+
+3. **🔒 WLAN, Sicherheit & Backup** (25 min, 75% passing)
+   - WPA3-Enterprise vs WPA2/PSK security
+   - WLAN site survey and AP placement
+   - 3-2-1 backup rule implementation
+   - Defense-in-depth security strategy
+
+4. **🏆 Modul 117 Prüfung: Netzinfrastruktur für KMU** (45 min, 80% passing)
+   - Comprehensive final exam with Swiss grading system
+   - All 15 questions testing complete Module 117 knowledge
+
+### Fixed - Quiz Result Display
+- **Result Page Route**: Fixed navigation from Quiz completion to Result Detail page
+  - Updated Quiz.js to navigate to `/result/:resultId` with result ID from API response
+  - Result review now displays correctly after quiz submission
+
+### Removed - Module 431
+- **Module 431 Removed**: Removed all references to Module 431 (Independent task execution) to focus on core modules
+  - Removed from frontend modules.js data file
+  - Removed from README.md, API documentation, and contributing guidelines
+  - Removed from GitHub issue templates
+  - Project now focuses on Module 117 (Network Infrastructure) and Module 437 (IT Support)
+
 ## [0.2.0] - 2026-01-07
 
 ### Added - Swiss Grading System

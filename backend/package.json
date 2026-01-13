@@ -1,6 +1,6 @@
 {
   "name": "emirastic-ict-quiz-backend",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Backend API for Emirastic ICT Quiz Application",
   "main": "server.js",
   "scripts": {

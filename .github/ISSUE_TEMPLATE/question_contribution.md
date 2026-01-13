@@ -10,7 +10,6 @@ assignees: ''
 ## 📚 Module
 Which module is this question for?
 - [ ] Module 117 - IT and network infrastructure
-- [ ] Module 431 - Independent task execution
 - [ ] Module 437 - IT support operations
 
 ## 🎯 Difficulty Level
