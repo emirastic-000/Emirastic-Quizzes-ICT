@@ -2,7 +2,7 @@
 
 > A modern fullstack quiz application for ICT-Fachmann EFZ apprenticeships in Switzerland
 
-[![Version](https://img.shields.io/badge/Version-0.3.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/Version-0.3.1-blue.svg)](CHANGELOG.md)
 [![Node.js](https://img.shields.io/badge/Node.js-v14+-green.svg)](https://nodejs.org/)
 [![React](https://img.shields.io/badge/React-18-blue.svg)](https://reactjs.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-5.0+-green.svg)](https://www.mongodb.com/)
@@ -12,7 +12,7 @@
 
 Emirastic ICT Quiz helps learners test their knowledge across official ICT-Fachmann EFZ modules with interactive quizzes based on the Swiss ICT apprenticeship curriculum.
 
-**Current Version: 0.3.0** - [See what's new](CHANGELOG.md)
+**Current Version: 0.3.1** - [See what's new](CHANGELOG.md)
 
 **Supported Modules:**
 - **Module 117**: IT and network infrastructure for small businesses (15 advanced questions, 4 quizzes)
@@ -27,6 +27,18 @@ Emirastic ICT Quiz helps learners test their knowledge across official ICT-Fachm
 - 📊 **Performance Analytics** - Detailed results and quiz history
 - 👨‍💼 **Admin Panel** - User and quiz management dashboard
 - 📱 **Responsive Design** - Works seamlessly on all devices
+
+### New in Version 0.3.1
+- 🎯 **Enhanced Module 117 Difficulty** - All wrong answers now use professional networking terminology
+- 🇩🇪 **Improved German Tutorial** - Added automated 2-minute setup option for Windows users
+- 📚 **Better Learning** - Questions require actual technical knowledge, not just common sense
+- 🔧 **Sophisticated Distractors** - Wrong answers sound plausible using terms like "VLAN Pruning", "DHCP Snooping"
+
+### New in Version 0.3.0
+- 🌐 **Module 117 Content** - 15 advanced network infrastructure questions with 4 comprehensive quizzes
+- 🪟 **Windows Automation** - One-click setup with `setup-windows.bat` for instant installation
+- 📊 **12 New Categories** - Network Planning, Switching, VLANs, DHCP, DNS, Routing, Wireless, Security, Backup
+- ⚡ **Quick Start Scripts** - `start-all.bat` with intelligent MongoDB detection
 
 ### New in Version 0.2.0
 - 🎓 **Swiss Grading System (1-6)** - Authentic Swiss grading for comprehensive exams
