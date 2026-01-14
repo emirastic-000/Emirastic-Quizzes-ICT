@@ -22,6 +22,7 @@ const module117Questions = [
     difficulty: 'hard'
   },
   {
+    module: 'Module 117',
     category: 'Network Planning',
     question: 'Welche Dokumentation ist bei der Planung einer Netzinfrastruktur für ein kleines Unternehmen essentiell?',
     options: [
