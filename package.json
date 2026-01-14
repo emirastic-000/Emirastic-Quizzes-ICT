@@ -1,6 +1,6 @@
 {
   "name": "emirastic-ict-quiz",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Emirastic ICT Quiz - Full-stack quiz application for ICT-Fachmann EFZ apprenticeship",
   "private": true,
   "scripts": {

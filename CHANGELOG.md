@@ -5,6 +5,22 @@ All notable changes to the Emirastic ICT Quiz project will be documented in this
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.2] - 2026-01-14
+
+### Changed
+- **Significantly Enhanced Module 437 Quiz Difficulty**: Made ALL wrong answers professional and technical
+  - Added advanced IT terminology to all 23 Module 437 questions
+  - Replaced all obviously incorrect answers with sophisticated IT jargon
+  - Wrong answers now include terms like: CMDB, ITIL frameworks, SLA metrics, SIEM, DevOps concepts
+  - Examples: "CMDB CI-Relationships", "Change Advisory Board (CAB)", "Root Cause Analysis", "RACI Matrix"
+  - Students now need deep understanding of IT concepts, not just common sense
+  - Questions test actual ITIL and IT service management knowledge
+
+### Improved
+- All Module 437 questions now require professional IT knowledge to distinguish correct answers
+- Wrong answers sound like legitimate IT practices but are contextually incorrect
+- Enhanced learning outcomes by forcing students to understand WHY answers are wrong
+
 ## [0.3.1] - 2026-01-13
 
 ### Changed

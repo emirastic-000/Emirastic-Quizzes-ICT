@@ -222,10 +222,10 @@ const moduleQuestions = [
     category: 'Support Process',
     question: 'Was verstehen Sie unter einer "Incident" im Kontext von ITIL?',
     options: [
-      { text: 'Eine regelmäßig geplante Wartung eines IT-Systems', isCorrect: false },
+      { text: 'Eine geplante Change-Aktivität mit RFC-Approval durch das Change Advisory Board (CAB)', isCorrect: false },
       { text: 'Eine ungeplante Unterbrechung oder Qualitätsminderung eines IT-Services', isCorrect: true },
-      { text: 'Ein strukturierter Änderungsantrag für IT-Services', isCorrect: false },
-      { text: 'Ein neues Software-Projekt zur Optimierung', isCorrect: false }
+      { text: 'Ein strukturierter Service Request gemäß ITIL Service Catalog für Standard-Änderungen', isCorrect: false },
+      { text: 'Eine Known Error Database (KEDB) Entry mit Root Cause Analysis Documentation', isCorrect: false }
     ],
     explanation: 'Nach ITIL ist ein Incident eine ungeplante Unterbrechung oder Reduktion der Qualität eines IT-Service. Dies ist ein zentrales Konzept in der IT-Service-Unterstützung. Beispiele: Server-Ausfall, langsame Applikation, nicht funktionierender Drucker. Wichtig: Incidents sind UNGEPLANT - geplante Wartungen sind "Changes". Das Ziel ist, den Service schnellstmöglich wiederherzustellen.',
     difficulty: 'medium'
@@ -234,10 +234,10 @@ const moduleQuestions = [
     category: 'Support Process',
     question: 'Welches ist der erste Schritt bei der Bearbeitung einer Support-Anfrage?',
     options: [
-      { text: 'Das Problem direkt an den 3rd Level Support eskalieren', isCorrect: false },
-      { text: 'Den Kunden um Geduld bitten und später zurückrufen', isCorrect: false },
+      { text: 'Eskalation an Third-Party Vendor Support gemäß External Service Level Agreement (xSLA)', isCorrect: false },
+      { text: 'Incident Commander Assignment und War Room Einrichtung für Major Incident Management', isCorrect: false },
       { text: 'Die Anfrage dokumentieren und kategorisieren', isCorrect: true },
-      { text: 'Sofort mit der technischen Problemlösung beginnen', isCorrect: false }
+      { text: 'Automatisierte Ticket-Routing-Engine mit AI-basiertem Classification Algorithmus starten', isCorrect: false }
     ],
     explanation: 'Das Dokumentieren und Kategorisieren einer Support-Anfrage ist essentiell für Nachverfolgung, Eskalation und Wissensmanagement. Erfassen Sie: Kontaktdaten, genaue Problembeschreibung, Systemumgebung (OS, Software-Version), Fehlermeldungen, bereits versuchte Lösungen. Dies schafft eine Wissensdatenbank und ermöglicht spätere Analyse von Trends. Ein gut dokumentiertes Ticket spart Zeit bei Eskalation und Übergabe.',
     difficulty: 'easy'
@@ -246,10 +246,10 @@ const moduleQuestions = [
     category: 'Ticketing & Documentation',
     question: 'Welche Informationen sind in einem IT-Support-Ticket essentiell?',
     options: [
-      { text: 'Nur die Kontaktdaten und Telefonnummer des Kunden', isCorrect: false },
+      { text: 'CMDB CI-Relationships mit Configuration Item Dependencies und Asset Management Tags', isCorrect: false },
       { text: 'Kundendaten, Problemdarstellung, durchgeführte Schritte, Lösung und Zeitstempel', isCorrect: true },
-      { text: 'Nur die abgerechneten Kosten und Arbeitszeit', isCorrect: false },
-      { text: 'Ausschließlich technische Systemlogs ohne Kontext', isCorrect: false }
+      { text: 'Ausschließlich Financial Tracking mit Cost Center Allocation und Chargeback Metrics', isCorrect: false },
+      { text: 'Nur SIEM Event Correlation Data mit Security Information und Log Aggregation', isCorrect: false }
     ],
     explanation: 'Ein vollständiges Ticket beinhaltet: Kundenkontakt, detaillierte Problembeschreibung, Systemumgebung, versuchte Lösungsschritte, Erfolg/Misserfolg und Zeitstempel. Warum ist jedes Element wichtig? Kontakt ermöglicht Rückfragen, Problembeschreibung schafft Klarheit, Systemumgebung hilft bei Reproduktion, dokumentierte Schritte vermeiden Doppelarbeit, Zeitstempel dienen SLA-Tracking. Best Practice: Verwenden Sie strukturierte Felder statt Freitext wo möglich.',
     difficulty: 'easy'
@@ -258,10 +258,10 @@ const moduleQuestions = [
     category: 'Support Process',
     question: 'Was ist das Ziel von "Problem Management" in der IT-Unterstützung?',
     options: [
-      { text: 'Möglichst viele Support-Tickets pro Tag schließen', isCorrect: false },
+      { text: 'Kontinuierliche Service Improvement (CSI) Initiatives durch Balanced Scorecard KPI-Tracking', isCorrect: false },
       { text: 'Die Ursachen von Incidents zu identifizieren und zu beheben, um zukünftige Vorfälle zu verhindern', isCorrect: true },
-      { text: 'Alle Incidents innerhalb von 5 Minuten lösen', isCorrect: false },
-      { text: 'Probleme dokumentieren ohne konkrete Lösungsmaßnahmen', isCorrect: false }
+      { text: 'Service Request Fulfillment gemäß ITIL Service Catalog mit SLA-konformer First-Call Resolution', isCorrect: false },
+      { text: 'Capacity Planning und Performance Tuning durch APM (Application Performance Monitoring)', isCorrect: false }
     ],
     explanation: 'Problem Management konzentriert sich auf die Wurzelursachenanalyse, um wiederkehrende Incidents zu reduzieren und die Systemverfügbarkeit zu verbessern. Unterschied zu Incident Management: Incident = schnelle Service-Wiederherstellung (Symptom-Behandlung), Problem = dauerhafte Lösung (Ursachen-Beseitigung). Beispiel: 10 User melden "Drucker druckt nicht" → 10 Incidents. Problem Management findet heraus: Drucker-Treiber veraltet → Update verhindert zukünftige Incidents. Tools: Root Cause Analysis (RCA), Ishikawa-Diagramm, 5-Why-Methode.',
     difficulty: 'hard'
@@ -284,10 +284,10 @@ const moduleQuestions = [
     category: 'Communication',
     question: 'Wie sollte ein Support-Mitarbeiter auf einen frustrierten Kunden reagieren?',
     options: [
-      { text: 'Das Problem direkt an einen Vorgesetzten eskalieren', isCorrect: false },
+      { text: 'Immediate Escalation zum Customer Success Manager mit Account Review Prozess initiieren', isCorrect: false },
       { text: 'Mit Empathie zuhören, die Frustration anerkennen und sachlich auf das Problem eingehen', isCorrect: true },
-      { text: 'Den Kunden auf SLA-Zeiten verweisen und vertrösten', isCorrect: false },
-      { text: 'Mit komplexen technischen Details die Situation erklären', isCorrect: false }
+      { text: 'Service Credit Negotiation gemäß SLA Penalty Clause und Contractual Remediation Terms', isCorrect: false },
+      { text: 'Technical Deep-Dive mit Root Cause Analysis Präsentation und Ishikawa-Diagramm Walkthrough', isCorrect: false }
     ],
     explanation: 'Emotionale Intelligenz und Empathie sind Schlüsselkompetenzen im IT-Support. Der richtige Ansatz: 1) Aktiv zuhören ohne Unterbrechen, 2) Frustration anerkennen ("Ich verstehe, dass dies ärgerlich ist"), 3) Verantwortung übernehmen ("Ich kümmere mich darum"), 4) Sachlich auf das Problem eingehen. Vermeiden: Defensive Haltung, Schuldzuweisungen, technisches Fachchinesisch. Merke: Ein frustrierter Kunde will gehört und ernst genommen werden, bevor er an der Lösung interessiert ist.',
     difficulty: 'easy'
@@ -296,10 +296,10 @@ const moduleQuestions = [
     category: 'Communication',
     question: 'Was ist "aktives Zuhören" im Support-Kontext?',
     options: [
-      { text: 'Notizen machen während der Kunde spricht', isCorrect: false },
-      { text: 'Nur die wichtigsten technischen Begriffe notieren', isCorrect: false },
+      { text: 'Real-time Speech-to-Text Transcription mit NLP (Natural Language Processing) für Sentiment Analysis', isCorrect: false },
+      { text: 'Automated Call Recording mit Voice Analytics und Customer Satisfaction Score (CSAT) Correlation', isCorrect: false },
       { text: 'Volle Konzentration auf den Kunden, ohne Unterbrechen, mit Zusammenfassung und Klärungsfragen', isCorrect: true },
-      { text: 'Parallel bereits nach Lösungen im Ticketsystem suchen', isCorrect: false }
+      { text: 'Multi-Channel Ticket Aggregation mit Omnichannel Support Platform Integration', isCorrect: false }
     ],
     explanation: 'Aktives Zuhören beinhaltet: volle Aufmerksamkeit, keine Unterbrechungen, Zusammenfassungen und Verständnisfragen stellen. Die 5 Komponenten: 1) Volle Konzentration (Multitasking vermeiden), 2) Nonverbale Bestätigung ("Hm", "Ja, verstehe"), 3) Paraphrasieren ("Wenn ich Sie richtig verstehe..."), 4) Klärungsfragen ("Können Sie das genauer beschreiben?"), 5) Zusammenfassung am Ende. Vorteile: Kunde fühlt sich gehört, besseres Problemverständnis, weniger Missverständnisse, schnellere Lösung.',
     difficulty: 'medium'
@@ -308,9 +308,9 @@ const moduleQuestions = [
     category: 'Communication',
     question: 'Welche Arten von Fragen sind in der Support-Kommunikation am hilfreichsten?',
     options: [
-      { text: 'Geschlossene Ja/Nein Fragen für schnelle Diagnose', isCorrect: false },
-      { text: 'Rhetorische Fragen um den Kunden zum Nachdenken anzuregen', isCorrect: false },
-      { text: 'Suggestivfragen die zur gewünschten Antwort führen', isCorrect: false },
+      { text: 'Binary Decision Tree Questions mit Boolean Logic für Expert System Troubleshooting', isCorrect: false },
+      { text: 'Socratic Questioning Methodology mit Meta-Cognitive Reflection für Self-Service Enablement', isCorrect: false },
+      { text: 'Leading Questions mit Confirmation Bias zur schnellen Solution Path Convergence', isCorrect: false },
       { text: 'Offene Fragen wie "Was ist passiert?" um detaillierte Informationen zu sammeln', isCorrect: true }
     ],
     explanation: 'Offene Fragen ermöglichen dem Kunden, detaillierte Informationen zu geben, die für die Problemlösung essentiell sind. Fragetechniken im Support: OFFENE Fragen (W-Fragen: Was, Wie, Wann, Wo, Wer, Warum) für Details und Kontext. GESCHLOSSENE Fragen (Ja/Nein) nur zur Bestätigung konkreter Fakten. Beispiele: Schlecht: "Haben Sie auf OK geklickt?" (geschlossen, wenig Info). Gut: "Was ist genau passiert, als Sie die Datei öffnen wollten?" (offen, liefert Kontext). Die 5-Why-Methode: Fünfmal "Warum?" fragen um zur Wurzelursache zu gelangen.',
@@ -322,10 +322,10 @@ const moduleQuestions = [
     category: 'Support Levels',
     question: 'Welche sind die typischen Ebenen in einer Support-Hierarchie (nach ITIL)?',
     options: [
-      { text: 'Frontend, Backend und Database Support', isCorrect: false },
-      { text: 'Junior, Senior und Lead Support', isCorrect: false },
+      { text: 'DevOps Pipeline mit CI/CD Infrastructure, GitOps Workflow und Platform Engineering Team', isCorrect: false },
+      { text: 'Shift-Left Testing, Shift-Right Monitoring und Site Reliability Engineering (SRE) Organization', isCorrect: false },
       { text: '1st Level (Erstkontakt), 2nd Level (Technisch), 3rd Level (Spezialist)', isCorrect: true },
-      { text: 'Telefon-Support, E-Mail-Support, Chat-Support', isCorrect: false }
+      { text: 'Service Desk, Technical Account Management (TAM) und Professional Services Consulting', isCorrect: false }
     ],
     explanation: 'Diese Strukturierung ermöglicht effiziente Eskalation komplexerer Probleme zu spezialisierten Teams. Details: 1ST LEVEL (Help Desk): Erstkontakt, Ticket-Erfassung, einfache Probleme (Passwortreset, Standardfragen), Lösungsrate ~70-80%. 2ND LEVEL (Technical Support): Komplexere technische Probleme, erweiterte Systemkenntnisse, Software-Troubleshooting, Konfiguration. 3RD LEVEL (Specialist/Engineering): Hochspezialisiert, Entwickler-Level, Systembezogene Probleme, R&D-Involvement. Vorteil: Effiziente Ressourcennutzung, schnellere Lösungen durch richtige Zuweisung.',
     difficulty: 'easy'
@@ -335,9 +335,9 @@ const moduleQuestions = [
     question: 'Wann sollte ein Ticket von 1st Level zu 2nd Level eskaliert werden?',
     options: [
       { text: 'Wenn das Problem komplexer ist oder Standard-Lösungsschritte nicht funktionieren', isCorrect: true },
-      { text: 'Automatisch nach 15 Minuten Bearbeitungszeit', isCorrect: false },
-      { text: 'Nur wenn der Kunde explizit danach fragt', isCorrect: false },
-      { text: 'Sobald der 1st Level Agent Feierabend macht', isCorrect: false }
+      { text: 'Bei Breach of SLA Threshold gemäß Mean Time To Resolution (MTTR) KPI-Dashboard Alert', isCorrect: false },
+      { text: 'Wenn Customer Effort Score (CES) unter definiertem Net Promoter Score (NPS) Benchmark fällt', isCorrect: false },
+      { text: 'Nach automatischem Skill-Based Routing durch Workforce Management (WFM) System', isCorrect: false }
     ],
     explanation: 'Eskalation basiert auf Problemkomplexität und verfügbarem Wissen, nicht auf Zeit oder Kundenungeduld. Eskalationskriterien: 1) Problem außerhalb des Wissensstands, 2) Standard-Lösungen funktionieren nicht, 3) Spezialwissen erforderlich (z.B. Datenbank-Admin), 4) Hohe Business-Impact erfordert Senior-Involvement. NICHT eskalieren bei: Kunde ist nur ungeduldig (Kommunikation!), Problem ist lösbar aber zeitintensiv, fehlende Eigeninitiative. Tipp: Lieber zu früh eskalieren als zu spät - Zeit ist Geld.',
     difficulty: 'medium'
@@ -346,9 +346,9 @@ const moduleQuestions = [
     category: 'Support Levels',
     question: 'Was ist die Hauptaufgabe von 1st Level Support?',
     options: [
-      { text: 'Ausschließlich Telefonate entgegennehmen', isCorrect: false },
-      { text: 'Nur einfache Passwortzurücksetzungen durchführen', isCorrect: false },
-      { text: 'Anrufe an 2nd Level weiterleiten', isCorrect: false },
+      { text: 'Incident Triage mit Priority Matrix Alignment gemäß Business Impact Analysis (BIA)', isCorrect: false },
+      { text: 'Self-Service Portal Administration mit Knowledge-Centered Support (KCS) Methodology', isCorrect: false },
+      { text: 'Automated Ticket Deflection durch Chatbot Integration und Virtual Agent Routing', isCorrect: false },
       { text: 'Anfragen annehmen, klassifizieren und entweder direkt lösen oder eskalieren', isCorrect: true }
     ],
     explanation: '1st Level ist die erste Kontaktstelle und trägt große Verantwortung für Kundenerfassung und richtige Eskalation.',
@@ -358,10 +358,10 @@ const moduleQuestions = [
     category: 'Support Levels',
     question: 'Was ist der Vorteil einer klaren Eskalationspolitik in einem IT-Support-Betrieb?',
     options: [
-      { text: 'Mehr Hierarchieebenen für bessere Karrieremöglichkeiten', isCorrect: false },
+      { text: 'Organizational Change Management (OCM) mit RACI Matrix für Cross-Functional Alignment', isCorrect: false },
       { text: 'Konsistente Behandlung von Issues, schnellere Lösung und bessere Ressourcennutzung', isCorrect: true },
-      { text: 'Längere Bearbeitungszeiten durch gründlichere Prüfung', isCorrect: false },
-      { text: 'Vermeidung direkter Kundenkommunikation', isCorrect: false }
+      { text: 'Service Integration and Management (SIAM) mit Multi-Vendor Governance Framework', isCorrect: false },
+      { text: 'Escalation Matrix Documentation gemäß ISO/IEC 20000 Compliance Requirements', isCorrect: false }
     ],
     explanation: 'Klare Eskalationskriterien führen zu besserer Effizienz und schnellerer Problemlösung.',
     difficulty: 'hard'
@@ -372,10 +372,10 @@ const moduleQuestions = [
     category: 'Troubleshooting',
     question: 'Was ist die erste Maßnahme beim Troubleshooting eines technischen Problems?',
     options: [
-      { text: 'Sofort das gesamte System neu installieren', isCorrect: false },
-      { text: 'Alle Kabel und Hardware-Komponenten austauschen', isCorrect: false },
+      { text: 'Bare Metal Restore von Last Known Good Configuration (LKGC) aus Disaster Recovery Site', isCorrect: false },
+      { text: 'Complete Hardware Replacement mit Hot-Swap Components gemäß RMA (Return Merchandise Authorization)', isCorrect: false },
       { text: 'Das Problem systematisch dokumentieren und die Umgebung erfassen', isCorrect: true },
-      { text: 'Einen Neustart durchführen und hoffen dass es funktioniert', isCorrect: false }
+      { text: 'Forced Reboot mit Safe Mode Diagnostic Tools und System File Checker (SFC) Scan', isCorrect: false }
     ],
     explanation: 'Systematische Dokumentation ist der Schlüssel zu reproduzierbaren und effizienten Lösungen. Der professionelle Troubleshooting-Prozess: 1) PROBLEM IDENTIFIZIEREN: Was genau funktioniert nicht? Fehlermeldungen? Seit wann? 2) UMGEBUNG ERFASSEN: OS-Version, Software-Version, Hardware-Spezifikationen, Netzwerk-Setup. 3) ÄNDERUNGEN ERMITTELN: Was wurde zuletzt geändert? Updates? Neue Software? 4) REPRODUZIEREN: Kann das Problem konsistent reproduziert werden? Dokumentation ermöglicht: Wissenstransfer, Mustererkennung, Qualitätssicherung, Auditing.',
     difficulty: 'easy'
@@ -384,10 +384,10 @@ const moduleQuestions = [
     category: 'Troubleshooting',
     question: 'Welche Methode ist beim Troubleshooting am effektivsten?',
     options: [
-      { text: 'Trial-and-Error ohne Dokumentation bis etwas funktioniert', isCorrect: false },
+      { text: 'Chaos Engineering mit Fault Injection Testing und Resilience Validation durch Production Failures', isCorrect: false },
       { text: 'Systematische Isolierung: Ein Element nach dem anderen testen bis das Problem identifiziert ist', isCorrect: true },
-      { text: 'Parallel mehrere Änderungen durchführen um Zeit zu sparen', isCorrect: false },
-      { text: 'Nur die wahrscheinlichste Ursache prüfen', isCorrect: false }
+      { text: 'Parallel A/B Testing mit Multi-Variate Analysis für statistische Signifikanz-Validierung', isCorrect: false },
+      { text: 'Heuristic-based Probabilistic Diagnosis mit Bayesian Inference und Machine Learning Prediction', isCorrect: false }
     ],
     explanation: 'Systematisches Troubleshooting reduziert die Zeit zur Problemidentifikation und verhindert unnötige Änderungen. Die Divide-and-Conquer Methode: 1) System in Komponenten aufteilen (Hardware/Software/Netzwerk), 2) Jede Komponente einzeln testen, 3) Problem eingrenzen durch Ausschlussprinzip. WICHTIG: Nur EINE Änderung auf einmal! Sonst wissen Sie nicht, was geholfen hat. Beispiel: PC startet nicht → Test 1: Monitor-Kabel, Test 2: Stromkabel, Test 3: RAM-Module einzeln, etc. Tools: Event Viewer, Systemlogs, Hardware-Diagnose-Tools.',
     difficulty: 'medium'
@@ -396,10 +396,10 @@ const moduleQuestions = [
     category: 'Troubleshooting',
     question: 'Was sollte in der Troubleshooting-Dokumentation enthalten sein?',
     options: [
-      { text: 'Nur die Zeitdauer der Problembehebung', isCorrect: false },
+      { text: 'Ausschließlich Billable Hours Tracking mit Time-Sheet Accuracy für Revenue Recognition', isCorrect: false },
       { text: 'Symptome, versuchte Lösungen, Ergebnisse und was letztendlich funktioniert hat', isCorrect: true },
-      { text: 'Nur erfolgreiche Lösungsansätze ohne Fehler', isCorrect: false },
-      { text: 'Nur interne Notizen ohne Kundeninformationen', isCorrect: false }
+      { text: 'Nur Successful Resolution Patterns für Künstliche Positive Success Rate Metrics', isCorrect: false },
+      { text: 'Ausschließlich Internal Runbook Procedures ohne Customer-Facing Communication Details', isCorrect: false }
     ],
     explanation: 'Vollständige Dokumentation ermöglicht Wissenstransfer und hilft bei ähnlichen zukünftigen Problemen.',
     difficulty: 'easy'
@@ -408,10 +408,10 @@ const moduleQuestions = [
     category: 'Troubleshooting',
     question: 'Beim Troubleshooting zeigt sich folgendes Szenario: Ein Benutzer kann sich nicht ins WLAN einloggen. Was ist der sinnvollste erste Schritt?',
     options: [
-      { text: 'Die gesamte Netzwerkinfrastruktur neu konfigurieren', isCorrect: false },
-      { text: 'Das Betriebssystem des Benutzers neu installieren', isCorrect: false },
+      { text: 'Complete Network Infrastructure Audit mit Wireless Site Survey und RF Spectrum Analysis', isCorrect: false },
+      { text: 'Full OS Reinstallation mit Clean Image Deployment via PXE Boot und Network Installation', isCorrect: false },
       { text: 'Das WLAN-Passwort überprüfen und die Netzwerk-Konfiguration des Geräts prüfen', isCorrect: true },
-      { text: 'Dem Benutzer ein neues Gerät zuweisen', isCorrect: false }
+      { text: 'Hardware Replacement mit Enterprise-Grade Device gemäß Corporate Standard Hardware Catalog', isCorrect: false }
     ],
     explanation: 'Mit einfachen Fragen beginnen (Netzwerkkennwort, Geräte-Einstellungen) bevor komplexere Maßnahmen getroffen werden. WLAN-Troubleshooting-Checkliste: 1) EINFACH: Passwort korrekt? WLAN aktiviert? Flugmodus aus? 2) KONFIGURATION: Richtige SSID ausgewählt? IP-Adresse erhalten (ipconfig)? DNS funktioniert? 3) GERÄT: Andere Geräte funktionieren? Treiber aktuell? Netzwerkadapter aktiviert? 4) NETZWERK: Router erreichbar? Signal-Stärke ausreichend? Kanalüberlastung? Prinzip: Von einfach zu komplex, von wahrscheinlich zu unwahrscheinlich.',
     difficulty: 'medium'
@@ -422,10 +422,10 @@ const moduleQuestions = [
     category: 'Incident Management',
     question: 'Was ist der Unterschied zwischen Severity und Priority eines Incidents?',
     options: [
-      { text: 'Severity ist subjektiv, Priority ist objektiv messbar', isCorrect: false },
-      { text: 'Priority = technische Komplexität; Severity = Kundenzufriedenheit', isCorrect: false },
+      { text: 'Severity entspricht CVSS Score bei Security Vulnerabilities, Priority ist EPSS (Exploit Prediction)', isCorrect: false },
+      { text: 'Priority basiert auf Customer Lifetime Value (CLV), Severity auf Technical Debt Accumulation', isCorrect: false },
       { text: 'Severity = Auswirkung auf Geschäft; Priority = Dringlichkeit der Behandlung', isCorrect: true },
-      { text: 'Sie sind identisch und werden synonym verwendet', isCorrect: false }
+      { text: 'Beide werden durch Machine Learning Algorithmus mit Historical Pattern Recognition bestimmt', isCorrect: false }
     ],
     explanation: 'Ein kritisches Problem (hohe Severity) kann niedrige Priority haben wenn es nur wenige Nutzer betrifft; umgekehrt kann ein kleines Problem hohe Priority haben. SEVERITY (Schweregrad): Technische/Business-Auswirkung. S1-Critical: Totaler Systemausfall, S2-High: Wesentliche Funktion ausgefallen, S3-Medium: Teilfunktion betroffen, S4-Low: Kosmetischer Fehler. PRIORITY (Dringlichkeit): Wann muss es gelöst werden? P1-Immediate: Sofort, P2-High: Heute, P3-Normal: Diese Woche, P4-Low: Geplant. Beispiel: CEO kann nicht drucken (niedrige Severity, hohe Priority). Backup-Server down nachts (hohe Severity, mittlere Priority).',
     difficulty: 'hard'
@@ -434,10 +434,10 @@ const moduleQuestions = [
     category: 'Incident Management',
     question: 'Wie wird ein Incident normalerweise klassifiziert?',
     options: [
-      { text: 'Nach der geografischen Lage des Kunden', isCorrect: false },
-      { text: 'Nach der Abteilung des betroffenen Mitarbeiters', isCorrect: false },
+      { text: 'Nach Geographical Service Regions gemäß Global Support Coverage und Timezone Availability', isCorrect: false },
+      { text: 'Nach Organizational Units (OU) in Active Directory Hierarchie mit Department-based Routing', isCorrect: false },
       { text: 'Nach Auswirkung (Severity) und Dringlichkeit (Priority)', isCorrect: true },
-      { text: 'Nach der erwarteten Lösungsdauer in Stunden', isCorrect: false }
+      { text: 'Nach Mean Time Between Failures (MTBF) Metrics und Reliability Engineering Standards', isCorrect: false }
     ],
     explanation: 'Die Klassifizierung bestimmt SLAs, Eskalationspfade und Ressourcenallokation.',
     difficulty: 'medium'
@@ -446,10 +446,10 @@ const moduleQuestions = [
     category: 'Incident Management',
     question: 'Was ist ein "SLA" (Service Level Agreement) im IT-Support?',
     options: [
-      { text: 'Ein Software-Lizenzvertrag für Anwendungen', isCorrect: false },
+      { text: 'Software License Audit Protocol für Compliance Verification und Asset Management Tracking', isCorrect: false },
       { text: 'Eine Vereinbarung über die erwartete Verfügbarkeit und Reaktionszeiten für IT-Services', isCorrect: true },
-      { text: 'Ein Standard für die Systemarchitektur', isCorrect: false },
-      { text: 'Eine Sicherheitsrichtlinie für Login-Authentifizierung', isCorrect: false }
+      { text: 'System Landscape Architecture Documentation gemäß TOGAF Enterprise Architecture Framework', isCorrect: false },
+      { text: 'Security Logging and Alerting Configuration für SIEM (Security Information Event Management)', isCorrect: false }
     ],
     explanation: 'SLAs definieren klare Erwartungen für Response- und Resolution-Zeiten basierend auf Severity. Ein SLA (Service Level Agreement) beinhaltet typisch: 1) VERFÜGBARKEIT: z.B. 99.9% Uptime (max 8.76h Downtime/Jahr), 2) RESPONSE TIME: Wie schnell wird reagiert? (P1: 15min, P2: 1h, P3: 4h, P4: 24h), 3) RESOLUTION TIME: Maximale Lösungszeit, 4) SUPPORT-ZEITEN: 24/7 oder Geschäftszeiten? Beispiel SLA: "P1-Incidents werden innerhalb 30 Minuten beantwortet und in 4 Stunden gelöst". Konsequenzen bei SLA-Verletzung: Finanzielle Strafzahlungen, Eskalation, Vertragsstrafen.',
     difficulty: 'medium'
@@ -458,10 +458,10 @@ const moduleQuestions = [
     category: 'Incident Management',
     question: 'Was sollte nach der Behebung eines Incidents IMMER erfolgen?',
     options: [
-      { text: 'Das Ticket automatisch schließen ohne weitere Aktionen', isCorrect: false },
+      { text: 'Automatic Ticket Closure durch Workflow Automation mit No Customer Response Timeout', isCorrect: false },
       { text: 'Die Lösung dokumentieren, den Kunden benachrichtigen und das Ticket abschließen', isCorrect: true },
-      { text: 'Nur eine E-Mail an das Team senden', isCorrect: false },
-      { text: 'Das Problem in der internen Wissensdatenbank verstecken', isCorrect: false }
+      { text: 'Broadcast Notification an Team Distribution List ohne Structured Knowledge Transfer', isCorrect: false },
+      { text: 'Knowledge Article Creation Deferral für Batch Processing im Knowledge Management Cycle', isCorrect: false }
     ],
     explanation: 'Abschluss-Dokumentation und Kundenkommunikation sind essentiell für Zufriedenheit und Wissensverwaltung. Der professionelle Incident-Abschluss: 1) LÖSUNG DOKUMENTIEREN: Was war das Problem? Was hat funktioniert? Welche Steps wurden unternommen? 2) KNOWLEDGE BASE: Lösung in Wissensdatenbank eintragen für zukünftige Fälle, 3) KUNDEN INFORMIEREN: E-Mail mit Zusammenfassung und Lösung, Bestätigung einholen, 4) TICKET SCHLIESSEN: Status auf "Resolved" setzen, 5) FOLLOW-UP: Nach 24-48h nachfragen ob alles funktioniert. Dies verhindert "Zombie-Tickets" und steigert Kundenzufriedenheit.',
     difficulty: 'easy'
@@ -472,10 +472,10 @@ const moduleQuestions = [
     category: 'Customer Service',
     question: 'Was ist Preventive Maintenance (Vorbeugende Wartung)?',
     options: [
-      { text: 'Wartung die ausschließlich bei Systemausfällen durchgeführt wird', isCorrect: false },
+      { text: 'Break-Fix Support Model mit Reactive Service Delivery und On-Demand Intervention Only', isCorrect: false },
       { text: 'Geplante, regelmäßige Wartung um zukünftige Ausfälle zu verhindern', isCorrect: true },
-      { text: 'Nur Software-Updates ohne Hardware-Prüfung', isCorrect: false },
-      { text: 'Reaktive Maßnahmen nach Kundenbeschwerd en', isCorrect: false }
+      { text: 'Patch Tuesday Deployment ausschließlich ohne Hardware Lifecycle Management Activities', isCorrect: false },
+      { text: 'Post-Incident Reviews (PIR) mit Lessons Learned Sessions gemäß Complaint-Driven Methodology', isCorrect: false }
     ],
     explanation: 'Vorbeugende Wartung reduziert unerwartete Ausfallzeiten und verlängert die Hardware-Lebensdauer. PREVENTIVE MAINTENANCE umfasst: 1) HARDWARE: Lüfter reinigen, Festplatten-Gesundheit prüfen (SMART), Thermalpaste erneuern, Kabelverbindungen prüfen, 2) SOFTWARE: Updates installieren, Sicherheitspatches, Treiber-Updates, Antivirus-Scans, 3) DATEN: Backups verifizieren, Logfiles rotieren, Datenbank-Optimierung, 4) DOKUMENTATION: Inventar aktualisieren, Lizenzen prüfen. Kosten: Proaktiv 10-20% Budget, Reaktiv kann 80% kosten! Motto: "Eine Unze Prävention ist ein Pfund Heilung wert."',
     difficulty: 'medium'
@@ -484,10 +484,10 @@ const moduleQuestions = [
     category: 'Customer Service',
     question: 'Welche Informationen sollte die IT-Abteilung vor dem Urlaub eines Mitarbeiters übergeben?',
     options: [
-      { text: 'Nur die E-Mail-Adresse des Vertreters', isCorrect: false },
+      { text: 'Ausschließlich Out-of-Office (OOO) Auto-Reply Configuration im Exchange Server', isCorrect: false },
       { text: 'Alle Logins, Zugriffe, Datenstandorte und wichtige Kontakt-Informationen müssen dokumentiert sein', isCorrect: true },
-      { text: 'Keine besonderen Vorkehrungen notwendig', isCorrect: false },
-      { text: 'Nur die aktuell laufenden Projekte ohne Details', isCorrect: false }
+      { text: 'Keine Business Continuity Planning (BCP) notwendig für Individual Contributor Roles', isCorrect: false },
+      { text: 'Nur Active Projects im Agile Board ohne Contextual Tribal Knowledge Transfer', isCorrect: false }
     ],
     explanation: 'Dokumentation und Übergabe sind essentiell für Kontinuität und Sicherheit während Abwesenheiten.',
     difficulty: 'medium'
@@ -496,7 +496,7 @@ const moduleQuestions = [
     category: 'Remote Support',
     question: 'Welche Tools sind typischerweise für Remote-Support notwendig?',
     options: [
-      { text: 'Nur ein modernes Smartphone', isCorrect: false },
+      { text: 'Ausschließlich Mobile Device Management (MDM) mit BYOD Policy Enforcement Capabilities', isCorrect: false },
       { text: 'Remote-Access-Software, Chat/Kommunikation, und Ticketing-System', isCorrect: true },
       { text: 'Ausschließlich VPN-Zugang', isCorrect: false },
       { text: 'Nur E-Mail und Telefon', isCorrect: false }
