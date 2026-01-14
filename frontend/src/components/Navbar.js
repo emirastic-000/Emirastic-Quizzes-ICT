@@ -14,7 +14,7 @@ function Navbar() {
       <div className="navbar-container">
         <div className="navbar-brand" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
           <h1>{t('navbar.appName')}</h1>
-          <p className="tagline">{t('navbar.tagline')} <span style={{ opacity: 0.6, fontSize: '0.85em' }}>v0.3.2</span></p>
+          <p className="tagline">{t('navbar.tagline')} <span style={{ opacity: 0.6, fontSize: '0.85em' }}>v0.3.3</span></p>
         </div>
         <div className="navbar-right">
           {user && (

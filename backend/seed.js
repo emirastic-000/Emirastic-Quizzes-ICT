@@ -13,10 +13,10 @@ const module117Questions = [
     category: 'Network Planning',
     question: 'Ein kleines Unternehmen mit 25 Arbeitsplätzen benötigt ein neues Netzwerk. Welche Subnetzmaske sollten Sie für das Netzwerk 192.168.10.0 wählen, um Platz für zukünftiges Wachstum (bis 50 Hosts) zu lassen, aber gleichzeitig IP-Adressen effizient zu nutzen?',
     options: [
-      { text: '255.255.255.224 (/27) - 30 nutzbare Hosts mit optimaler Segmentierung für VLAN-Struktur', isCorrect: false },
+      { text: '255.255.255.224 (/27) - 30 nutzbare Hosts, optimal für Current State mit 20% Growth Buffer', isCorrect: false },
       { text: '255.255.255.192 (/26) - 62 nutzbare Hosts', isCorrect: true },
-      { text: '255.255.255.128 (/25) - 126 nutzbare Hosts für Enterprise-Scale Deployment mit VLSM-Hierarchie', isCorrect: false },
-      { text: '255.255.255.240 (/28) - 14 nutzbare Hosts gemäß RFC 1918 Best Practice für Micro-Segmentation', isCorrect: false }
+      { text: '255.255.255.128 (/25) - 126 nutzbare Hosts, Best Practice für 100% Future Scalability Reserve', isCorrect: false },
+      { text: '255.255.255.240 (/28) - 14 nutzbare Hosts plus DHCP Pool Fragmentation für Efficiency', isCorrect: false }
     ],
     explanation: 'Ein /26 Subnetz (255.255.255.192) bietet genau 62 nutzbare Host-Adressen (64 Adressen - 2 für Netzwerk- und Broadcast-Adresse). Dies ist optimal für 25 aktuelle + zukünftige Expansion auf 50 Hosts. /24 wäre zu verschwenderisch (254 Hosts), /28 zu klein (nur 14 Hosts), /25 funktioniert aber ist weniger effizient als nötig. VLSM (Variable Length Subnet Masking) Berechnung: 2^(32-26) = 64 Adressen total, davon 62 nutzbar. Best Practice: Immer 20-30% Reserve einplanen für Drucker, Server, IoT-Geräte.',
     difficulty: 'hard'
@@ -25,10 +25,10 @@ const module117Questions = [
     category: 'Network Planning',
     question: 'Welche Dokumentation ist bei der Planung einer Netzinfrastruktur für ein kleines Unternehmen essentiell?',
     options: [
-      { text: 'Layer-2 Topologie-Diagramm mit MAC-Adress-Tabellen und STP-Root-Bridge-Dokumentation', isCorrect: false },
       { text: 'Netzwerkdiagramm, IP-Adressplan, Kabelplan, VLAN-Schema und Backup-Konzept', isCorrect: true },
-      { text: 'SNMP-MIB-Dokumentation mit OID-Mappings und Trap-Configuration gemäß ISO/IEC 27001', isCorrect: false },
-      { text: 'Ausschließlich die running-config Dateien aller Layer-3 Devices mit MD5-Checksummen', isCorrect: false }
+      { text: 'Layer-2 Switching Matrix mit CAM Table Entries und Spanning-Tree Root Bridge Priority Documentation', isCorrect: false },
+      { text: 'Ausschließlich CMDB (Configuration Management Database) mit CI Dependencies und Service Mapping', isCorrect: false },
+      { text: 'Network Baseline Performance Metrics mit SNMP Polling Data und NetFlow Traffic Analysis Reports', isCorrect: false }
     ],
     explanation: 'Professionelle Netzwerkdokumentation umfasst: 1) NETZWERKDIAGRAMM (physisch & logisch): Layer-2/3 Topologie, Gerätestandorte. 2) IP-ADRESSPLAN: Subnetz-Zuteilungen, DHCP-Bereiche, statische IPs. 3) KABELPLAN: Patchfeld-Dokumentation, Kabellängen, Typen. 4) VLAN-SCHEMA: VLAN-IDs, Zuordnungen, Trunk-Ports. 5) BACKUP-KONZEPT: Konfigurationssicherungen, Disaster Recovery. Zusätzlich: Passwort-Vault, Änderungsprotokoll, SLA-Vereinbarungen. Tools: Visio, draw.io, NetBox, Excel/Confluence.',
     difficulty: 'medium'
@@ -38,10 +38,10 @@ const module117Questions = [
     category: 'Switching',
     question: 'Sie konfigurieren einen Switch für ein kleines Unternehmen. Welche Ports sollten standardmäßig für End-User-Geräte konfiguriert werden?',
     options: [
-      { text: 'Trunk Ports mit 802.1Q Encapsulation und Native VLAN 99 für optimale Throughput-Performance', isCorrect: false },
       { text: 'Access Ports im entsprechenden VLAN mit PortFast und BPDU Guard aktiviert', isCorrect: true },
-      { text: 'Dynamic Desirable Mode mit DTP Auto-Negotiation gemäß IEEE 802.1D Standard', isCorrect: false },
-      { text: 'Access Ports mit Root Guard und Loop Guard zur Spanning-Tree-Optimierung aktiviert', isCorrect: false }
+      { text: 'Access Ports mit PortSecurity Sticky MAC-Learning und Maximum 2 MAC Addresses per Port', isCorrect: false },
+      { text: 'Dynamic Auto Mode mit DTP Negotiation für flexible Trunk/Access Port Auto-Configuration', isCorrect: false },
+      { text: 'Trunk Ports mit allowed VLAN list und native VLAN tagging für End-Device Flexibility', isCorrect: false }
     ],
     explanation: 'End-User Access Ports benötigen spezifische Sicherheits- und Performance-Konfigurationen: ACCESS PORT: Gehört zu einem einzelnen VLAN (nicht Trunk). PORTFAST: Überspringt Spanning Tree Listening/Learning States (30 Sekunden Verzögerung) → sofortige Verbindung. BPDU GUARD: Deaktiviert Port bei empfangenen BPDUs → verhindert Switching-Loops durch falsch verkabelte Switches. BEST PRACTICE Konfiguration (Cisco): switchport mode access, switchport access vlan 10, spanning-tree portfast, spanning-tree bpduguard enable. Zusätzlich: Port Security für MAC-Adressen-Limitierung.',
     difficulty: 'hard'
@@ -51,10 +51,10 @@ const module117Questions = [
     category: 'VLANs',
     question: 'Warum sollten Sie in einem kleinen Unternehmen VLANs einsetzen, auch wenn alle Geräte im selben Gebäude sind?',
     options: [
-      { text: 'Zur IEEE 802.1Q Frame-Tagging Implementation mit Extended VLAN Range (1006-4094) für zukünftige Skalierung', isCorrect: false },
       { text: 'Zur Sicherheitstrennung (Gast-WLAN, Drucker, Server), Broadcast-Reduktion und logischen Netzwerksegmentierung', isCorrect: true },
-      { text: 'Um VTP (VLAN Trunking Protocol) Transparent Mode mit VLAN Pruning zu ermöglichen und Bandwidth zu optimieren', isCorrect: false },
-      { text: 'Für Private VLANs (PVLAN) mit Promiscuous Ports zur Micro-Segmentation auf Layer-2 Ebene', isCorrect: false }
+      { text: 'Für Layer-2 MAC Address Table Optimization und Reduced ARP Cache Memory Consumption', isCorrect: false },
+      { text: 'Zur Implementierung von QinQ (802.1ad) Double VLAN Tagging für Service Provider Integration', isCorrect: false },
+      { text: 'Um VLAN Hopping Attacks durch DTP Exploitation zu ermöglichen für Security Testing', isCorrect: false }
     ],
     explanation: 'VLANs bieten auch in kleinen Netzwerken erhebliche Vorteile: 1) SICHERHEIT: Segmentierung von Gäste-WLAN (VLAN 20) isoliert von Firmen-Netz (VLAN 10) und Server-Netz (VLAN 30). 2) BROADCAST-KONTROLLE: Reduziert Broadcast-Domänen → bessere Performance. 3) COMPLIANCE: Trennung von PCI-DSS relevanten Systemen (z.B. Kassensystem). 4) QoS: VoIP-Telefone in separatem VLAN (VLAN 40) mit Priorisierung. BEISPIEL-STRUKTUR: VLAN 10 Benutzer, VLAN 20 Gäste, VLAN 30 Server, VLAN 40 VoIP, VLAN 50 Management, VLAN 99 Native (unused). Inter-VLAN Routing via Layer-3 Switch oder Router.',
     difficulty: 'medium'
@@ -66,10 +66,10 @@ const module117Questions = [
     category: 'DHCP',
     question: 'Sie konfigurieren einen DHCP-Server für ein Firmennetzwerk. Welche IP-Bereiche sollten Sie aus dem DHCP-Scope ausschließen?',
     options: [
-      { text: 'Multicast-Adressen (224.0.0.0/4) und APIPA-Range (169.254.0.0/16) gemäß IANA-Reservierungen ausschließen', isCorrect: false },
       { text: 'Server, Drucker, Switches, Router und andere Infrastruktur-Geräte mit statischen IPs', isCorrect: true },
-      { text: 'Class D Broadcast-Domain und Network-ID (.0) sowie Directed-Broadcast (.255) für CIDR-Compliance', isCorrect: false },
-      { text: 'Nur Link-Local Adressen und die erste Hälfte des Subnets für DHCP Relay Agent reservieren', isCorrect: false }
+      { text: 'Reserved IP Ranges gemäß DHCP Option 121 (Classless Static Routes) für Routing Table Injection', isCorrect: false },
+      { text: 'IP-Adressen im oberen /28 Block für DHCP Failover Partner Communication und Lease Synchronization', isCorrect: false },
+      { text: 'Ausschließlich die ersten 10% des Subnets für IPAM (IP Address Management) Tool Reservations', isCorrect: false }
     ],
     explanation: 'DHCP-Scope-Planung verhindert IP-Konflikte und strukturiert das Netzwerk: STATISCHE IP-BEREICHE (aus DHCP ausschließen): .1-.50 für Infrastruktur (Router .1, Switches .2-.10, Server .11-.30, Drucker .31-.40, APs .41-.50). DHCP-POOL: .51-.254 für dynamische Clients (Workstations, Laptops, Smartphones). DHCP-OPTIONEN konfigurieren: Option 3 (Default Gateway), Option 6 (DNS-Server), Option 15 (DNS-Domain), Option 42 (NTP-Server), Option 66/67 (PXE-Boot). LEASE-TIME: 8 Stunden für Büro (Workstations), 1 Stunde für Gäste-WLAN. Reservierungen für wichtige Clients (Geschäftsführung, Konferenzraum-Equipment).',
     difficulty: 'hard'
@@ -79,10 +79,10 @@ const module117Questions = [
     category: 'DHCP',
     question: 'Ein Client erhält keine IP-Adresse via DHCP. Welche Troubleshooting-Schritte sollten Sie in der richtigen Reihenfolge durchführen?',
     options: [
-      { text: 'DHCP Snooping Binding Table validieren, Option 82 Circuit-ID prüfen, dann DHCP Relay Agent konfigurieren', isCorrect: false },
       { text: 'Client-Konfiguration prüfen, Netzwerk-Konnektivität testen, DHCP-Relay/Helper prüfen, DHCP-Server-Logs checken', isCorrect: true },
-      { text: 'Wireshark DORA-Capture auf Port 67/68 starten, dann DHCP Decline Messages im Syslog analysieren', isCorrect: false },
-      { text: 'BOOTP Relay konfigurieren, UDP Port 546/547 für DHCPv6 öffnen, dann Stateless Address Autoconfiguration aktivieren', isCorrect: false }
+      { text: 'DHCP Lease Database Corruption Check, dann SQL Database Rebuild mit Transaction Log Recovery', isCorrect: false },
+      { text: 'Port Mirroring auf Switch konfigurieren für DHCP DORA Packet Capture mit Full Payload Analysis', isCorrect: false },
+      { text: 'DHCP Scope Statistics Review für Address Utilization Percentage und Lease Duration Optimization', isCorrect: false }
     ],
     explanation: 'Systematisches DHCP-Troubleshooting mit 4-Schritt-Methode: SCHRITT 1 - CLIENT: ipconfig /all (Windows) oder ifconfig/ip a (Linux) → APIPA-Adresse 169.254.x.x deutet auf DHCP-Ausfall. ipconfig /release && ipconfig /renew zum Test. SCHRITT 2 - KONNEKTIVITÄT: Ping zum Gateway → funktioniert Switching? SCHRITT 3 - DHCP-RELAY: Wenn Client in anderem Subnet als DHCP-Server → ip helper-address (Cisco) oder DHCP-Relay konfiguriert? SCHRITT 4 - SERVER: DHCP-Service läuft? Scope erschöpft? Fehler in Logs? Wireshark: DHCP DORA-Prozess analysieren (Discover, Offer, Request, Acknowledge). Häufige Ursachen: Falsche VLAN-Zuordnung, fehlender DHCP-Relay, erschöpfter Scope.',
     difficulty: 'hard'
@@ -92,10 +92,10 @@ const module117Questions = [
     category: 'IP Management',
     question: 'Was ist der Unterschied zwischen APIPA (169.254.x.x) und einer manuell zugewiesenen IP im selben Bereich?',
     options: [
-      { text: 'APIPA verwendet Zeroconf mit mDNS (Multicast DNS) für Service Discovery gemäß RFC 3927 Standards', isCorrect: false },
       { text: 'APIPA ist eine Fallback-Adresse bei DHCP-Ausfall und erlaubt nur lokale Link-Kommunikation, keine Gateway-Verbindung', isCorrect: true },
-      { text: 'APIPA nutzt ARP Probing mit Gratuitous ARP für Duplicate Address Detection, während statische IPs DAD verwenden', isCorrect: false },
-      { text: 'Manuell zugewiesene 169.254.x.x nutzen IPv4LL (Link-Local) mit höherer Priorität als APIPA-Adressen', isCorrect: false }
+      { text: 'APIPA verwendet Metric 254 für Routing Table Entries während statische IPs Metric 1 nutzen', isCorrect: false },
+      { text: 'Manuell konfigurierte 169.254.x.x Adressen unterstützen Default Gateway Assignment, APIPA nicht', isCorrect: false },
+      { text: 'APIPA IPs haben TTL (Time To Live) von 24h während statische Konfiguration permanent bleibt', isCorrect: false }
     ],
     explanation: 'APIPA (Automatic Private IP Addressing) ist ein Windows-Fallback-Mechanismus: FUNKTION: Bei DHCP-Ausfall generiert der Client automatisch eine zufällige IP aus 169.254.1.0/16 (169.254.1.1 - 169.254.254.254) mittels ARP-basierter Duplikatserkennung. LIMITATION: Kein Default Gateway, kein DNS → nur lokale Link-Kommunikation im selben Subnet möglich. DIAGNOSE: 169.254.x.x zeigt DEFINITIV DHCP-Problem (Server down, keine Verbindung, Scope voll, falsches VLAN). WICHTIG: NIEMALS manuell 169.254.x.x vergeben - dieser Bereich ist für Auto-Konfiguration reserviert! RFC 3927 definiert den Standard. Linux-Äquivalent: avahi-autoipd oder systemd-networkd link-local addressing.',
     difficulty: 'medium'
@@ -107,10 +107,10 @@ const module117Questions = [
     category: 'Routing',
     question: 'In einem Multi-VLAN-Setup mit VLANs 10, 20 und 30 auf einem Layer-2-Switch: Wie müssen Clients in VLAN 10 mit VLAN 20 kommunizieren?',
     options: [
-      { text: 'Durch Private VLAN (PVLAN) Community Ports mit Promiscuous Port Mapping für Cross-VLAN Traffic', isCorrect: false },
       { text: 'Via Router-on-a-Stick oder Layer-3-Switch für Inter-VLAN-Routing', isCorrect: true },
-      { text: 'Mittels VLAN Trunking Protocol (VTP) Server Mode mit 802.1Q Tagging für transparente Layer-2 Forwarding', isCorrect: false },
-      { text: 'Durch EtherChannel mit LACP (Link Aggregation) und Cross-VLAN Port-Channel Configuration', isCorrect: false }
+      { text: 'Durch VLAN Mapping mit 802.1Q Translation auf Trunk Ports für Cross-VLAN Frame Forwarding', isCorrect: false },
+      { text: 'Mit Switch Virtual Interfaces (SVI) ohne IP Routing - Layer-2 Bridging zwischen VLANs genügt', isCorrect: false },
+      { text: 'Via VLAN Access Control Lists (VACLs) für Port-based VLAN-to-VLAN Traffic Forwarding', isCorrect: false }
     ],
     explanation: 'VLANs sind separate Broadcast-Domänen, daher ist Routing für Inter-VLAN-Kommunikation erforderlich: OPTION 1 - ROUTER-ON-A-STICK: Ein physischer Router-Port mit Subinterfaces (802.1Q Tagging). Switch Trunk zum Router. Router-Config: interface Gi0/0.10 → encapsulation dot1q 10 → ip address 192.168.10.1 255.255.255.0. Pro: Kostengünstig. Contra: Bottleneck bei hohem Traffic. OPTION 2 - LAYER-3-SWITCH (SVI): Viel effizienter! interface vlan 10 → ip address 192.168.10.1 255.255.255.0 → ip routing (global). Routing in Hardware (ASIC) → Line-Rate-Performance. CLIENT-KONFIGURATION: Default Gateway = entsprechende VLAN-IP (VLAN 10 → GW 192.168.10.1).',
     difficulty: 'hard'
@@ -120,10 +120,10 @@ const module117Questions = [
     category: 'Routing',
     question: 'Welche Routing-Methode ist für ein kleines Unternehmen mit einem einfachen Netzwerk am besten geeignet?',
     options: [
-      { text: 'OSPF Single-Area Design mit DR/BDR Election für optimale Link-State Database Synchronisation', isCorrect: false },
       { text: 'Statisches Routing mit Default Route zum Internet-Gateway', isCorrect: true },
-      { text: 'IS-IS Level-1 Routing mit Wide Metrics gemäß ISO/IEC 10589 für Enterprise-Grade Reliability', isCorrect: false },
-      { text: 'RIPng (RIP next generation) mit Split-Horizon und Poison Reverse für Loop-Prevention', isCorrect: false }
+      { text: 'EIGRP (Enhanced Interior Gateway Routing Protocol) mit Unequal-Cost Load Balancing für Bandwidth Optimization', isCorrect: false },
+      { text: 'BGP Route Reflector Topology mit AS-Path Prepending für Traffic Engineering und Failover', isCorrect: false },
+      { text: 'Policy-Based Routing (PBR) mit Route Maps für granulare Traffic Steering per Application', isCorrect: false }
     ],
     explanation: 'Für kleine Netzwerke ist statisches Routing die beste Wahl aufgrund von Einfachheit und Sicherheit: STATISCHES ROUTING: Manuelle Route-Konfiguration. Keine CPU/Bandwidth-Overhead durch Routing-Protokolle. DEFAULT ROUTE: ip route 0.0.0.0 0.0.0.0 <next-hop> (Cisco) → alles zum Internet-Gateway. Einfach zu troubleshooten und zu verstehen. WANN DYNAMISCHES ROUTING? Erst bei >3 Routern, redundanten Pfaden, komplexer Topologie. KLEINE FIRMA: Typisch nur 1-2 Router → statisch völlig ausreichend! ZUSATZ: Interne Routen zu lokalen Subnets + Default Route nach außen. VORTEIL: Keine Routing-Protokoll-Schwachstellen, volle Kontrolle, kein unerwartetes Routing-Verhalten.',
     difficulty: 'medium'
@@ -135,10 +135,10 @@ const module117Questions = [
     category: 'DNS',
     question: 'Sie richten einen lokalen DNS-Server für ein kleines Unternehmen ein. Welche DNS-Einträge sind essentiell für grundlegende Funktionalität?',
     options: [
-      { text: 'DNSSEC mit RRSIG und DNSKEY Records für Zone Signing gemäß RFC 4034 Best Practice', isCorrect: false },
       { text: 'A-Records (IPv4), AAAA (IPv6), MX (Mail), PTR (Reverse), CNAME (Aliase), SRV (Services)', isCorrect: true },
-      { text: 'Nur NS (Name Server) Records mit SOA Serial Number Increment für Authoritative Zone Transfer', isCorrect: false },
-      { text: 'NAPTR Records für ENUM-Mapping und CAA Records für Certificate Authority Authorization', isCorrect: false }
+      { text: 'Primary Zone mit Dynamic Updates enabled, Secondary Zones für Redundancy und AXFR Zone Transfer', isCorrect: false },
+      { text: 'Nur SOA (Start of Authority) Records mit Refresh/Retry Timers und Zone Serial Number Management', isCorrect: false },
+      { text: 'DNSBL (DNS Blacklist) Entries mit RBL Integration für Spam Prevention und Mail Server Protection', isCorrect: false }
     ],
     explanation: 'Professionelle DNS-Konfiguration erfordert verschiedene Record-Typen: A-RECORD: Hostname → IPv4 (server01.firma.local → 192.168.10.10). AAAA-RECORD: Hostname → IPv6 für IPv6-fähige Infrastruktur. MX-RECORD: Mail-Server-Priorität (mail.firma.ch IN MX 10 mailserver.firma.ch). PTR-RECORD: Reverse DNS (IP → Hostname) - wichtig für Mail-Server-Reputation! CNAME-RECORD: Aliase (www.firma.local → webserver.firma.local). SRV-RECORD: Service-Discovery (z.B. Active Directory: _ldap._tcp.firma.local). TXT-RECORD: SPF, DKIM, DMARC für E-Mail-Sicherheit. Zusätzlich: DNS-Forwarding zu 8.8.8.8 (Google) oder 1.1.1.1 (Cloudflare) für Internet-Auflösung.',
     difficulty: 'hard'
@@ -148,10 +148,10 @@ const module117Questions = [
     category: 'DNS',
     question: 'Ein Benutzer kann www.google.com nicht aufrufen, aber die IP 8.8.8.8 ist ping-bar. Was ist das wahrscheinlichste Problem?',
     options: [
-      { text: 'MTU Path Discovery (PMTUD) Failure durch ICMP Fragmentation Needed Blocking', isCorrect: false },
       { text: 'DNS-Server nicht erreichbar oder falsch konfiguriert', isCorrect: true },
-      { text: 'Asymmetrisches Routing mit RPF (Reverse Path Forwarding) Check Failure auf dem Gateway', isCorrect: false },
-      { text: 'TCP Window Scaling Problem durch defekte Selective Acknowledgment (SACK) Implementation', isCorrect: false }
+      { text: 'EDNS0 (Extension Mechanisms for DNS) Compatibility Issue mit Packet Size über 512 Bytes', isCorrect: false },
+      { text: 'DNS Cache Poisoning Attack mit Corrupted Resource Records in Local Resolver Cache', isCorrect: false },
+      { text: 'Split-Brain DNS Configuration Mismatch zwischen Internal und External Resolution Zones', isCorrect: false }
     ],
     explanation: 'Dieses klassische Problem zeigt: Netzwerk-Konnektivität funktioniert (Ping zu IP OK), aber Namensauflösung fehlgeschlagen. DIAGNOSE-SCHRITTE: 1) ipconfig /all → DNS-Server korrekt? 2) nslookup google.com → Funktioniert Auflösung? 3) nslookup google.com 8.8.8.8 → Funktioniert externer DNS? 4) ping zum konfigurierten DNS-Server. HÄUFIGE URSACHEN: A) DNS-Server-IP falsch/nicht gesetzt (DHCP-Problem: Option 6), B) Firmen-DNS-Server down, C) Firewall blockiert DNS-Port 53 UDP, D) DNS-Server hat keine Forwarder konfiguriert. LÖSUNG: DHCP Option 6 korrigieren oder temporär: DNS auf 8.8.8.8 oder 1.1.1.1 setzen. LANGFRISTIG: Redundante DNS-Server (Primary + Secondary).',
     difficulty: 'medium'
@@ -163,10 +163,10 @@ const module117Questions = [
     category: 'Wireless',
     question: 'Welche WLAN-Sicherheitskonfiguration sollten Sie für ein Firmennetzwerk im Jahr 2025 implementieren?',
     options: [
-      { text: 'WPA2-Enterprise mit PEAP-MSCHAPv2 und Fast Roaming (802.11r) für optimale Client Mobility', isCorrect: false },
       { text: 'WPA3-Enterprise mit RADIUS-Authentifizierung oder mindestens WPA2/WPA3-Mixed mit starkem PSK', isCorrect: true },
-      { text: 'WPA3-Personal mit SAE (Simultaneous Authentication of Equals) und OWE (Opportunistic Wireless Encryption)', isCorrect: false },
-      { text: 'WPA2-PSK mit CCMP-256 AES Encryption und PMF (Protected Management Frames) gemäß 802.11w', isCorrect: false }
+      { text: 'WPA2-Enterprise mit EAP-TTLS und PAP Inner Authentication für Legacy Device Compatibility', isCorrect: false },
+      { text: 'WPA3-SAE mit Dragonfly Key Exchange und Anti-Clogging Tokens gegen DoS Attacks', isCorrect: false },
+      { text: 'WPA2-PSK mit TKIP/AES Mixed Mode Encryption für Backward Compatibility mit älteren Clients', isCorrect: false }
     ],
     explanation: 'WLAN-Sicherheit 2025 Best Practices: OPTIMAL: WPA3-ENTERPRISE mit 802.1X/RADIUS → individuelle Benutzer-Authentifizierung, EAP-TLS Zertifikate, kein Shared Secret, Perfect Forward Secrecy. Pro: Beste Sicherheit, User-Tracking, automatisches Re-Keying. MINIMUM: WPA2/WPA3-MIXED MODE mit starkem PSK (min. 20 Zeichen, komplex) für kleinere Firmen ohne AD. ZUSÄTZLICHE MASSNAHMEN: Separate SSIDs (Firma/Gäste), Hidden SSID für Firmen-Netz (Security durch Obscurity - nur zusätzlich!), Management Frame Protection (802.11w), Disable WPS, Regelmäßige PSK-Rotation (quartalsweise). NIEMALS: WEP (in Sekunden crackbar), offenes WLAN, WPA1, MAC-Filter allein (trivial zu umgehen).',
     difficulty: 'hard'
@@ -176,10 +176,10 @@ const module117Questions = [
     category: 'Wireless',
     question: 'Sie planen die Access Point Platzierung für optimale WLAN-Abdeckung. Welche Faktoren sind entscheidend?',
     options: [
-      { text: 'EIRP (Equivalent Isotropically Radiated Power) Calculation mit dBm-Werten gemäß lokalen Regulierungsbehörden', isCorrect: false },
       { text: 'Gebäudestruktur, Materialien (Wände), Client-Dichte, Kanal-Überlappung, Frequenzband-Wahl', isCorrect: true },
-      { text: 'MU-MIMO (Multi-User MIMO) Spatial Streams mit Beamforming für maximale Throughput-Aggregation', isCorrect: false },
-      { text: 'DFS (Dynamic Frequency Selection) Channels mit TPC (Transmit Power Control) für Radar-Avoidance', isCorrect: false }
+      { text: 'Co-Channel Interference (CCI) Reduction durch 802.11ax BSS Coloring und Spatial Reuse Parameter', isCorrect: false },
+      { text: 'Airtime Fairness Configuration mit Band Steering Logic für 2.4GHz to 5GHz Client Migration', isCorrect: false },
+      { text: 'RSSI (Received Signal Strength Indicator) Thresholds mit Client Steering und Roaming Aggressiveness', isCorrect: false }
     ],
     explanation: 'Professionelle WLAN-Planung (Site Survey) berücksichtigt viele Faktoren: 1) GEBÄUDE-STRUKTUR: Betonwände = massive Dämpfung (-10 bis -30 dB), Glas/Holz = moderate Dämpfung. Heatmap-Analyse mit Tools wie Ekahau oder NetSpot. 2) KANAL-PLANUNG: 2.4 GHz: Nur Kanäle 1, 6, 11 nutzen (überlappungsfrei!), 5 GHz: Viel mehr Kanäle verfügbar (36, 40, 44... bis 165) → weniger Interferenz. 3) CLIENT-DICHTE: Konferenzräume brauchen mehr Kapazität → MIMO-APs, höhere Client-to-AP Ratio (max. 25-30 Clients/AP). 4) FREQUENZBAND: 5 GHz für Performance (höhere Geschwindigkeit, weniger Interferenz), 2.4 GHz für Reichweite. REGEL: 20-25% Überlappung zwischen AP-Coverage-Zellen für Roaming.',
     difficulty: 'hard'
@@ -191,10 +191,10 @@ const module117Questions = [
     category: 'Backup',
     question: 'Welche Backup-Strategie erfüllt die 3-2-1 Regel für ein kleines Unternehmen?',
     options: [
-      { text: 'Incremental Backup Chain mit Synthetic Full Backup und Forward Incremental Consolidation', isCorrect: false },
       { text: '3 Backup-Kopien, auf 2 verschiedenen Medientypen, 1 Kopie offsite (Cloud/anderer Standort)', isCorrect: true },
-      { text: 'GFS (Grandfather-Father-Son) Rotation mit LTO-8 Tape Library und Bare Metal Recovery Images', isCorrect: false },
-      { text: 'CDP (Continuous Data Protection) mit RPO <15 Minuten und Object-Lock für Immutability', isCorrect: false }
+      { text: '3 Full Backups wöchentlich mit Differential Backups täglich für optimale Recovery Time Objective', isCorrect: false },
+      { text: '2 Onsite Disk-to-Disk Backups plus 1 Tape Backup mit Offsite Rotation im Monthly Cycle', isCorrect: false },
+      { text: '3-Tier Storage Architecture mit Hot/Warm/Cold Data Classification und Lifecycle Management', isCorrect: false }
     ],
     explanation: 'Die 3-2-1 Backup-Regel ist der Industrie-Standard für Datensicherheit: 3 KOPIEN: Produktiv-Daten + 2 Backups (z.B. 1 lokal, 1 offsite). 2 MEDIENTYPEN: Unterschiedliche Technologien (z.B. Festplatte + Tape ODER Festplatte + Cloud) → Schutz vor medienspezifischen Ausfällen. 1 OFFSITE: Schutz vor Brand, Diebstahl, Naturkatastrophen. BEISPIEL-SETUP: Täglich inkrementelles Backup auf lokales NAS, wöchentlich volles Backup auf externe HDD (rotiert zu Bankschließfach), täglich Cloud-Backup (Veeam/Acronis → AWS S3 oder Azure). ZUSÄTZLICH: Regelmäßige Restore-Tests (mindestens quartalsweise!), Verschlüsselung, Versionierung (gegen Ransomware). RPO/RTO definieren (Recovery Point/Time Objective).',
     difficulty: 'medium'

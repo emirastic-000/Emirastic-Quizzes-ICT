@@ -5,6 +5,24 @@ All notable changes to the Emirastic ICT Quiz project will be documented in this
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.3] - 2026-01-14
+
+### Changed
+- **Massively Enhanced Module 117 Quiz Difficulty**: All 15 questions now have extremely deceptive wrong answers
+  - Wrong answers now sound MORE correct than before with specific technical details
+  - Added precise networking concepts that are contextually wrong but technically valid elsewhere
+  - Examples: "VLAN Mapping with 802.1Q Translation", "DHCP Lease Database Corruption Check", "BGP Route Reflector"
+  - Subnetting: Wrong answers now include plausible reasoning ("20% Growth Buffer", "100% Scalability Reserve")
+  - WLAN: Added specific 802.11 standards and authentication methods as distractors
+  - DNS: Included advanced concepts like EDNS0, Split-Brain DNS, DNS Cache Poisoning
+  - Backup: Added specific backup methodologies and storage architectures
+  - Students must understand WHY each technical term doesn't apply to the specific scenario
+
+### Improved
+- Module 117 questions now require deep technical understanding, not just keyword recognition
+- Wrong answers use legitimate networking technologies but in incorrect contexts
+- Enhanced learning by forcing students to distinguish between similar-sounding technologies
+
 ## [0.3.2] - 2026-01-14
 
 ### Changed
